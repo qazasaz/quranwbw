@@ -4,10 +4,10 @@
 Quranwbw.com is a word-by-word Quran learning website where you can see the translation and transliteration for each word along with audio for each word and each ayah. Quranwbw.com has been made with the desire to help others and myself understand the Holy Quran.
 
 ### Previously...
-Previously Quranwbw.com used PHP and MySql in the backend to fetch the data from the database and display the results dynamically. I have however decided to switch to a complete static website. The backend is currently being used as the static files generator. 
+Previously, Quranwbw.com used PHP and MySql in the backend to fetch the data from the database and display the results dynamically. I have however decided to switch to a complete static website. The backend is currently being used as the static files generator. 
 
 ### The Static Version
-This website is the static version which is generated from a custom made generator which takes the data from the backend database and throws them into a static file. This makes the website faster and can be easily downloaded by anyone else for offline view.
+This website is the static version which is generated from a custom made generator which takes the data from the backend database and makes static files out of it. This makes the website faster and most importantly, add offline capabilities to it.
 
 ### Offline View
 Any page that you visit gets cached automatically for faster loading times and also offline view. This is done through Service Workers. However if you want, you can download the whole repository on your computer so that you don't have to visit each page manually. However, I'm planning to provide an option to the users to download/cache the whole website on a click of a button.

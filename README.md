@@ -1,3 +1,5 @@
+<p align="center"><img src="https://raw.githubusercontent.com/quranwbw/quranwbw/master/assets/images/logo.png" width="400"></p>
+
 # Bismillahi Ar-Rahman Ar-Rahim
 
 ## Quran WBW

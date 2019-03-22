@@ -17,8 +17,8 @@ On the previous version of Quranwbw.com, I was able to provide more than 40 diff
 
 ### Audio Files
 The audio files used by this website are hosted on different repositories. If you would like to use, you are free to clone these repositories and use them for your own use.
-- [audio-word](https://github.com/quranwbw/audio-word) - the word-by-word audio files.
-- [audio-surah](https://github.com/quranwbw/audio-surah) - the full surah audio files.
+- [audio-word](https://github.com/quranwbw/audio-word) - the word audio files.
+- [audio-surah](https://github.com/quranwbw/audio-surah) - the surah audio files.
 - [audio-ayah-arabic](https://github.com/quranwbw/audio-ayah-arabic) - the arabic ayah audio files.
 - [audio-ayah-english](https://github.com/quranwbw/audio-ayah-english) - the english ayah audio files.
 

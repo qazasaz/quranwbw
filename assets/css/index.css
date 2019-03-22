@@ -1,0 +1,43 @@
+.container{max-width:1000px;}
+.table .table-row>div:not(.lite){display:flex;align-items:center;justify-content:space-between;padding:12px 20px;}
+.table .table-row>div .title,.table .table-row>div>div .title{font-size:16px;display:block;}
+.table .table-row>div .subtitle,.table .table-row>div>div .subtitle{display:block;font-size:11px;color:#bdbdbd;margin-top:2px;font-weight:500;letter-spacing:.3px;}
+.table .table-row>div>div.main{flex-grow:1;overflow:hidden;white-space:nowrap;float:left;display:block;min-width:0;margin-right:8px;}
+.table .table-row>div:last-child,.table .table-row>div>div:last-child{margin-right:0;}
+.table{margin-bottom:8px;}
+.table,.table .table-row{width:100%;display:flex;flex-direction:column;}
+.table .table-row{background-color:#fff;align-items:stretch;justify-content:stretch;border-radius:2px;text-align:initial;user-select:initial;-moz-user-select:initial;-ms-user-select:initial;-webkit-user-select:initial;cursor:auto;}
+.table .table-row,.table>a{display:block;margin-bottom:4px;}
+.table .table-row:last-child,.table>a:last-child{margin-bottom:0;}
+.table a>.table-row{cursor:pointer;color:initial;transition:box-shadow .15s ease-in-out,border .15s ease-in-out;border:1px solid transparent;}
+.table a:hover>.table-row{background-color:#f7f7f799;box-shadow:0 4px 21px -3px rgba(51,51,51,.15);border-color:#91740c;}
+@media (min-width:800px){
+.table.trio{flex-direction:row;justify-content:flex-start;flex-wrap:wrap;}
+.table.trio>a{display:inline-block;margin-right:4px;width:calc(33% - 2px);flex-basis:calc(33% - 2px);}
+.table.trio>a:nth-child(2n){margin-right:0;}
+}
+@media (min-width:1200px){
+.table.trio>a{width:33%;flex-basis:33%;}
+.table.trio>a:nth-child(2n){margin-right:4px;}
+.table.trio>a:nth-child(3n){margin-right:0;}
+}
+
+@font-face {
+	font-family: 'surah-icons';
+	src: url('../fonts/surah-icons.eot');
+	src: local('surah-icons'),
+	    url('../fonts/surah-icons.eot?#iefix') format('embedded-opentype'),
+	    url('../fonts/surah-icons.woff2') format('woff2'),
+	    url('../fonts/surah-icons.woff') format('woff'),
+	    url('../fonts/surah-icons.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class*=" i-s"], [class^=i-s] {
+    font-family: surah-icons!important;
+    line-height: 1;
+    font-size: 25px;
+}
+
+.i-s1:before{content:"\E904"}.i-s2:before{content:"\E905"}.i-s3:before{content:"\E906"}.i-s4:before{content:"\E907"}.i-s5:before{content:"\E908"}.i-s6:before{content:"\E90B"}.i-s7:before{content:"\E90C"}.i-s8:before{content:"\E90D"}.i-s9:before{content:"\E90E"}.i-s10:before{content:"\E90F"}.i-s11:before{content:"\E910"}.i-s12:before{content:"\E911"}.i-s13:before{content:"\E912"}.i-s14:before{content:"\E913"}.i-s15:before{content:"\E914"}.i-s16:before{content:"\E915"}.i-s17:before{content:"\E916"}.i-s18:before{content:"\E917"}.i-s19:before{content:"\E918"}.i-s20:before{content:"\E919"}.i-s21:before{content:"\E91A"}.i-s22:before{content:"\E91B"}.i-s23:before{content:"\E91C"}.i-s24:before{content:"\E91D"}.i-s25:before{content:"\E91E"}.i-s26:before{content:"\E91F"}.i-s27:before{content:"\E920"}.i-s28:before{content:"\E921"}.i-s29:before{content:"\E922"}.i-s30:before{content:"\E923"}.i-s31:before{content:"\E924"}.i-s32:before{content:"\E925"}.i-s33:before{content:"\E926"}.i-s34:before{content:"\E92E"}.i-s35:before{content:"\E92F"}.i-s36:before{content:"\E930"}.i-s37:before{content:"\E931"}.i-s38:before{content:"\E909"}.i-s39:before{content:"\E90A"}.i-s40:before{content:"\E927"}.i-s41:before{content:"\E928"}.i-s42:before{content:"\E929"}.i-s43:before{content:"\E92A"}.i-s44:before{content:"\E92B"}.i-s45:before{content:"\E92C"}.i-s46:before{content:"\E92D"}.i-s47:before{content:"\E932"}.i-s48:before{content:"\E902"}.i-s49:before{content:"\E933"}.i-s50:before{content:"\E934"}.i-s51:before{content:"\E935"}.i-s52:before{content:"\E936"}.i-s53:before{content:"\E937"}.i-s54:before{content:"\E938"}.i-s55:before{content:"\E939"}.i-s56:before{content:"\E93A"}.i-s57:before{content:"\E93B"}.i-s58:before{content:"\E93C"}.i-s59:before{content:"\E900"}.i-s60:before{content:"\E901"}.i-s61:before{content:"\E941"}.i-s62:before{content:"\E942"}.i-s63:before{content:"\E943"}.i-s64:before{content:"\E944"}.i-s65:before{content:"\E945"}.i-s66:before{content:"\E946"}.i-s67:before{content:"\E947"}.i-s68:before{content:"\E948"}.i-s69:before{content:"\E949"}.i-s70:before{content:"\E94A"}.i-s71:before{content:"\E94B"}.i-s72:before{content:"\E94C"}.i-s73:before{content:"\E94D"}.i-s74:before{content:"\E94E"}.i-s75:before{content:"\E94F"}.i-s76:before{content:"\E950"}.i-s77:before{content:"\E951"}.i-s78:before{content:"\E952"}.i-s79:before{content:"\E93D"}.i-s80:before{content:"\E93E"}.i-s81:before{content:"\E93F"}.i-s82:before{content:"\E940"}.i-s83:before{content:"\E953"}.i-s84:before{content:"\E954"}.i-s85:before{content:"\E955"}.i-s86:before{content:"\E956"}.i-s87:before{content:"\E957"}.i-s88:before{content:"\E958"}.i-s89:before{content:"\E959"}.i-s90:before{content:"\E95A"}.i-s91:before{content:"\E95B"}.i-s92:before{content:"\E95C"}.i-s93:before{content:"\E95D"}.i-s94:before{content:"\E95E"}.i-s95:before{content:"\E95F"}.i-s96:before{content:"\E960"}.i-s97:before{content:"\E961"}.i-s98:before{content:"\E962"}.i-s99:before{content:"\E963"}.i-s100:before{content:"\E964"}.i-s101:before{content:"\E965"}.i-s102:before{content:"\E966"}.i-s103:before{content:"\E967"}.i-s104:before{content:"\E968"}.i-s105:before{content:"\E969"}.i-s106:before{content:"\E96A"}.i-s107:before{content:"\E96B"}.i-s108:before{content:"\E96C"}.i-s109:before{content:"\E96D"}.i-s110:before{content:"\E96E"}.i-s111:before{content:"\E96F"}.i-s112:before{content:"\E970"}.i-s113:before{content:"\E971"}.i-s114:before{content:"\E972"}

@@ -1,0 +1,21 @@
+{
+  "short_name": "Quran WBW",
+  "name": "Quran - Word By Word English Translation And Transliteration",
+  "description": "Learn The Holy Quran through Word by Word English Translation and Transliteration.",
+  "icons": [
+    {
+      "src": "images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#91740c",
+  "display": "fullscreen",
+  "theme_color": "#91740c"
+}

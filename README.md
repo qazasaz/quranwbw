@@ -1,8 +1,6 @@
 <p align="center"><img src="https://raw.githubusercontent.com/quranwbw/quranwbw/master/assets/images/logo.png" width="400"></p>
 
-# Bismillahi Ar-Rahman Ar-Rahim
-
-### Quran WBW
+### Bismillahi Ar-Rahman Ar-Rahim
 Quranwbw.com is a word-by-word Quran learning website where you can see the translation and transliteration for each word along with audio for each word and each ayah. Quranwbw.com has been made with the desire to help others and myself understand the Holy Quran.
 
 ### The Static Version

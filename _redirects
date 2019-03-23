@@ -1,3 +1,9 @@
+# about page redirect
+/about https://github.com/quranwbw/quranwbw#readme
+
+# audio links rewrite
+/audiowords/* https://quranwbw.github.io/audio-words/:splat 200
+
 # surah pages rewrite
 /1 /surahs/1.html 200
 /2 /surahs/2.html 200
@@ -113,9 +119,3 @@
 /112 /surahs/112.html 200
 /113 /surahs/113.html 200
 /114 /surahs/114.html 200
-
-# about page redirect
-/about https://github.com/quranwbw/quranwbw#readme
-
-# audio links rewrite
-/audiowords/* https://quranwbw.github.io/audio-words/:splat 200

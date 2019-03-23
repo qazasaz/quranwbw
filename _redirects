@@ -116,3 +116,6 @@
 
 # about page redirect
 /about https://github.com/quranwbw/quranwbw#readme
+
+# audio links rewrite
+/audiowords https://quranwbw.github.io/audio-words 200

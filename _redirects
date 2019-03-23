@@ -118,4 +118,4 @@
 /about https://github.com/quranwbw/quranwbw#readme
 
 # audio links rewrite
-/audiowords https://quranwbw.github.io/audio-words 200
+/audiowords/* https://quranwbw.github.io/audio-words/:splat 200

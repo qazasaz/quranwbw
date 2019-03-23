@@ -16,7 +16,7 @@ Any page that you visit gets cached automatically for faster loading times and a
 On the previous version of Quranwbw.com, I was able to provide more than 40 different translations for the ayahs but had to remove them when moving to the current static version. I'm planning to add additional translations for ayahs in the near future IN SHA ALLAH.
 
 ### Audio Files
-The audio files used by Quranwbw.com are [hosted on GitLab](https://gitlab.com/quranwbw/audios) under one repository. If you would like to use, you are free to clone it and use them for your own use.
+The audio files used by Quranwbw.com are [hosted on GitLab](https://gitlab.com/quranwbw/audios) under one repository. If you would like to use, you are free to clone it and use them.
 
 ### Contribute
 If you feel like contributing, please help me fix any issues regarding the words, translations, transliterations, or the design. You can raise an issue here or contact me on my email.

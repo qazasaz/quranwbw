@@ -16,11 +16,7 @@ Any page that you visit gets cached automatically for faster loading times and a
 On the previous version of Quranwbw.com, I was able to provide more than 40 different translations for the ayahs but had to remove them when moving to the current static version. I'm planning to add additional translations for ayahs in the near future IN SHA ALLAH.
 
 ### Audio Files
-The audio files used by this website are hosted on different repositories. If you would like to use, you are free to clone these repositories and use them for your own use.
-- [audio-words](https://github.com/quranwbw/audio-words) - the words audio files.
-- [audio-surah](https://github.com/quranwbw/audio-surah) - the surahs audio files.
-- [audio-ayah-arabic](https://github.com/quranwbw/audio-ayah-arabic) - the arabic ayahs audio files.
-- [audio-ayah-english](https://github.com/quranwbw/audio-ayah-english) - the english ayahs audio files.
+The audio files used by Quranwbw.com are [hosted on GitLab](https://gitlab.com/quranwbw/audios) under one repository. If you would like to use, you are free to clone it and use them for your own use.
 
 ### Contribute
 If you feel like contributing, please help me fix any issues regarding the words, translations, transliterations, or the design. You can raise an issue here or contact me on my email.
@@ -37,4 +33,4 @@ I currently don't have any plans on making a mobile app because first, I don't h
 - [Ivan](https://codepen.io/k-ivan) - for his beautiful and wonderful audio player.
 
 ### Contact
-If you find any error on this website, have any suggestions, or would like to contribute, please raise an issue or email me at quranwbw@gmail.com.
+If you find any error on Quranwbw.com, have any suggestions, or would like to contribute, please raise an issue or email me at quranwbw@gmail.com.

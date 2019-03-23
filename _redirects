@@ -113,3 +113,6 @@
 /112 /surahs/112.html 200
 /113 /surahs/113.html 200
 /114 /surahs/114.html 200
+
+# about page redirect
+/about https://github.com/quranwbw/quranwbw#readme

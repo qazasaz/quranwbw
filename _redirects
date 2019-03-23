@@ -2,7 +2,7 @@
 /about https://github.com/quranwbw/quranwbw#readme
 
 # audio links rewrite
-/audiowords/* https://quranwbw.github.io/audio-words/:splat 200
+/audios/* https://gitlab.com/quranwbw/audios/raw/master/:splat 200
 
 # surah pages rewrite
 /1 /surahs/1.html 200

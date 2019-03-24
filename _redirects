@@ -121,4 +121,4 @@
 /114 /surahs/114.html 200
 
 # ayah number rewrite
-/70/* /surahs/70.html#:splat
+/70/:ayah /surahs/70/:ayah

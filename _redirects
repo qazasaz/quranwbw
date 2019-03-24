@@ -7,4 +7,5 @@
 # surah pages rewrite
 /:surah /surahs/:surah 200
 
-/:surah/:ayah /surahs/:surah#:ayah
+# ayah rewrite
+/:surah/:ayah /surahs/:surah#:ayah 200

@@ -9,5 +9,3 @@
 
 # ayah rewrite
 /:surah/:ayah /:surah#:ayah
-
-/:surah/:start-* /:surah.html#:start

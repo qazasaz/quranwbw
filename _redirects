@@ -8,4 +8,4 @@
 /:surah /surahs/:surah 200
 
 # ayah rewrite
-/:surah/* /surahs/:surah#:splat 200
+/:surah/* /surahs/:surah#:splat

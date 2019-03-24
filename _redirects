@@ -8,4 +8,4 @@
 /:surah /surahs/:surah 200
 
 # ayah rewrite
-/:surah/:ayah /surahs/:surah.html#:ayah 200
+/:surah/:ayah /:surahs#:ayah 200

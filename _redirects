@@ -5,7 +5,7 @@
 /audios/* https://gitlab.com/quranwbw/audios/raw/master/:splat 200
 
 # ayah number rewrite
-/2/255 /surahs/2.html#255 200
+/2/* /surahs/2.html#:splat 200
 
 # surah pages rewrite
 /1 /surahs/1.html 200

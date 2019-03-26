@@ -1,1 +1,425 @@
-*,*::before,*::after{box-sizing:border-box}body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;font-size:14px}pre,code{font-family:Consolas,Courier,monospace;font-size:inherit;color:#333;background:#fafafa}pre{padding:1rem;border:1px solid #eee;overflow:auto}.bottom-nav{position:fixed;left:0;right:0;bottom:0;width:100%;height:42px;font-family:inherit;font-size:14px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border-top:1px solid #ccc;background:#fff;box-shadow:0 -1px 10px rgba(0,0,0,0.1);z-index:99999}.bottom-nav__inner{width:85%;display:flex;max-width:1440px;margin:auto}.bottom-nav__item{justify-content:center}.bottom-nav__item--prevsurah>.ap__controls,.bottom-nav__item--nextsurah>.ap__controls{flex:0 25%;margin-top:-3px}@-webkit-keyframes fs{0%{opacity:0;-webkit-transform:scale(0.5);transform:scale(0.5)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}@keyframes fs{0%{opacity:0;-webkit-transform:scale(0.5);transform:scale(0.5)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}.bottom-nav__item--surahplayer{width:60%;padding:0 20px}.bottom-nav__item.bottom-nav__item--prevsurah,.bottom-nav__item.bottom-nav__item--nextsurah{width:20%;text-align:center;height:50px;padding-top:10px}.ap .chevron-left,.ap .chevron-right{width:19px;height:19px;margin-bottom:-4px}.track{position:relative;width:100%;align-self:flex-start;padding:7px 0 0}.track__title{position:absolute;width:100%;overflow:hidden;text-align:center;white-space:nowrap;text-overflow:ellipsis}.track__time{position:absolute;top:5px;right:0}.progress-container{position:relative;padding:7px 0;margin-top:15px;overflow:hidden;cursor:pointer}.progress-container:hover .progress__bar:after{opacity:1}.progress{height:3px;border-radius:3px;background:#ddd}.progress__bar,.progress__preload{position:absolute;width:0;height:3px;border-radius:3px 0 0 3px}.progress__bar{background:#91740c;z-index:1}.progress__bar:after{position:absolute;top:0;right:-10px;width:10px;height:10px;margin-top:-3px;content:'';border-radius:6px;background:#91740c;opacity:0;transition:opacity .3s ease}.progress__bar--active:after{-webkit-transform:scale(1.4);transform:scale(1.4)}.progress__preload{background:#c4c4c4;z-index:0}.ap__controls,.ap button{margin:0;padding:0;border:0;outline:0;background:transparent;position:relative;display:block;height:50px;text-align:center;cursor:pointer;transition:background .3s ease;margin-left:auto;margin-right:auto}.ap__controls:active,.ap button:active{background:rgba(0,0,0,0.1)}.ap__controls:hover,.ap button:hover{opacity:1}.icon-play>path{transition:all .3s ease}.icon-play:focus{outline:0}.is-playing .icon-play{fill:#91740c}.volume-btn{display:block;text-align:center;width:100%}.volume{position:absolute;left:50%;bottom:45px;width:40px;margin-left:-20px;height:120px;opacity:0;visibility:hidden;-webkit-transform:translateY(10px);transform:translateY(10px);transition:all 0.3s cubic-bezier(0.17,0.72,0.26,1.23);background:#f2f2f2;border:1px solid #ccc;border-radius:1px;z-index:88888}.volume::before,.volume::after{content:'';position:absolute;bottom:-12px;border:7px solid transparent;border-top:7px solid #f2f2f2;left:50%;margin-left:-7px}.volume::after{bottom:-14px;z-index:-1;border-top:7px solid #ccc}.volume-container:hover .volume{opacity:1;-webkit-transform:translateY(0);transform:translateY(0);visibility:visible}.volume__track{position:relative;display:block;width:3px;height:100px;margin:10px auto;background:#ddd;border-radius:3px;overflow:hidden}.volume__bar{position:absolute;left:0;right:0;bottom:0;background:#91740c;height:50%}.icon-volume-off{display:none}.has-muted .icon-volume-on{display:none}.has-muted .icon-volume-off{display:inline;opacity:.7}.ap__controls.is-active>svg{fill:#91740c;-webkit-filter:drop-shadow(0 0 3px rgba(70,130,180,0.4));filter:drop-shadow(0 0 3px rgba(70,130,180,0.4))}.audio-player{padding-top:15px}@-webkit-keyframes eq{0%{height:3px}50%{height:20px}100%{height:3px}}@keyframes eq{0%{height:3px}50%{height:20px}100%{height:3px}}.eq{display:flex;width:20px;height:20px;margin:0 auto;justify-content:space-between;align-items:flex-end}.eq__bar{width:4px;background:#fff;-webkit-filter:drop-shadow(0 0 5px #fff);filter:drop-shadow(0 0 5px #fff)}.eq__bar:nth-child(1){-webkit-animation:eq .8s ease-in-out infinite 0s;animation:eq .8s ease-in-out infinite 0s}.eq__bar:nth-child(2){-webkit-animation:eq .8s ease-in-out infinite .2s;animation:eq .8s ease-in-out infinite .2s}.eq__bar:nth-child(3){-webkit-animation:eq .8s ease-in-out infinite .4s;animation:eq .8s ease-in-out infinite .4s}.h-hide{display:none}.h-show{display:block}.pl-container{display:none}@media only screen and(min-device-width:375px) and(max-device-width:667px) and(-webkit-min-device-pixel-ratio:2) and(orientation:portrait){.ap{height:50px}.bottom-nav__inner{width:100%}.bottom-nav__item.bottom-nav__item--prevsurah,.bottom-nav__item.bottom-nav__item--nextsurah{width:42.5%;padding-top:9px}.bottom-nav__item.bottom-nav__item--prevsurah{text-align:left;padding-left:10px}.bottom-nav__item.bottom-nav__item--nextsurah{text-align:right;padding-right:10px}.bottom-nav__item--surahplayer{width:15%}.bottom-nav__item--surahplayer{padding:0 10px}a.surah-nav-links{font-size:14px!important}.track{display:none}.ap__controls,.ap button{display:block !important}button.ap__controls.ap__controls--toggle{margin-top:0}.ap .chevron-left,.ap .chevron-right{width:25px;height:25px}.icon-play{width:45px;height:45px}}@media only screen and(min-device-width:375px) and(max-device-width:667px) and(-webkit-min-device-pixel-ratio:2) and(orientation:landscape){.bottom-nav__inner{width:100%}.bottom-nav__item--surahplayer{width:50%}.bottom-nav__item.bottom-nav__item--prevsurah,.bottom-nav__item.bottom-nav__item--nextsurah{width:25%}}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 14px;
+}
+
+pre, code {
+  font-family: Consolas, Courier, monospace;
+  font-size: inherit;
+  color: #333;
+  background: #fafafa;
+}
+
+pre {
+  padding: 1rem;
+  border: 1px solid #eee;
+  overflow: auto;
+}
+
+/*-----------------------
+    Audio Player - AP
+------------------------*/
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 42px;
+  font-family: inherit;
+  font-size: 14px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-top: 1px solid #ccc;
+  background: #ffffff;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+  z-index: 99999;
+}
+
+.bottom-nav__inner {
+  width: 85%;
+  display: flex;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.bottom-nav__item {
+  justify-content: center;
+  /*align-items: center;
+  display: flex;
+  flex: 1;*/
+}
+
+.bottom-nav__item--prevsurah > .ap__controls,
+.bottom-nav__item--nextsurah > .ap__controls {
+  flex: 0 25%;
+  margin-top: -3px;
+}
+
+@-webkit-keyframes fs {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes fs {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.bottom-nav__item--surahplayer {
+  width: 60%;
+  padding: 0 20px;
+}
+
+.bottom-nav__item.bottom-nav__item--prevsurah, .bottom-nav__item.bottom-nav__item--nextsurah {
+  width: 20%;
+  text-align: center;
+  height: 50px;
+  padding-top: 10px;
+}
+
+.ap .chevron-left, .ap .chevron-right {
+  width: 19px;
+  height: 19px;
+  margin-bottom: -4px;
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  align-self: flex-start;
+  padding: 7px 0 0;
+}
+
+.track__title {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.track__time {
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+.progress-container {
+  position: relative;
+  padding: 7px 0;
+  margin-top: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.progress-container:hover .progress__bar:after {
+  opacity: 1;
+}
+
+.progress {
+  height: 3px;
+  border-radius: 3px;
+  background: #ddd;
+}
+
+.progress__bar,
+.progress__preload {
+  position: absolute;
+  width: 0;
+  height: 3px;
+  border-radius: 3px 0 0 3px;
+}
+
+.progress__bar {
+  background: #91740c;
+  z-index: 1;
+}
+.progress__bar:after {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 10px;
+  height: 10px;
+  margin-top: -3px;
+  content: '';
+  border-radius: 6px;
+  background: #91740c;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.progress__bar--active:after {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+
+.progress__preload {
+  background: #c4c4c4;
+  z-index: 0;
+}
+
+.ap__controls,
+.ap button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  position: relative;
+  display: block;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: background .3s ease;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ap__controls:active,
+.ap button:active {
+  background: rgba(0, 0, 0, 0.1);
+}
+.ap__controls:hover,
+.ap button:hover {
+  opacity: 1;
+}
+
+.icon-play > path {
+  transition: all .3s ease;
+}
+
+.icon-play:focus {
+  outline: 0;
+}
+
+.is-playing .icon-play {
+  fill: #91740c;
+}
+
+.volume-btn {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.volume {
+  position: absolute;
+  left: 50%;
+  bottom: 45px;
+  width: 40px;
+  margin-left: -20px;
+  height: 120px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.17, 0.72, 0.26, 1.23);
+  background: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  z-index: 88888;
+}
+.volume::before, .volume::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  border: 7px solid transparent;
+  border-top: 7px solid #f2f2f2;
+  left: 50%;
+  margin-left: -7px;
+}
+.volume::after {
+  bottom: -14px;
+  z-index: -1;
+  border-top: 7px solid #ccc;
+}
+
+.volume-container:hover .volume {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  visibility: visible;
+}
+
+.volume__track {
+  position: relative;
+  display: block;
+  width: 3px;
+  height: 100px;
+  margin: 10px auto;
+  background: #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.volume__bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #91740c;
+  height: 50%;
+}
+
+.icon-volume-off {
+  display: none;
+}
+
+.has-muted .icon-volume-on {
+  display: none;
+}
+.has-muted .icon-volume-off {
+  display: inline;
+  opacity: .7;
+}
+
+.ap__controls.is-active > svg {
+  fill: #91740c;
+  -webkit-filter: drop-shadow(0 0 3px rgba(70, 130, 180, 0.4));
+          filter: drop-shadow(0 0 3px rgba(70, 130, 180, 0.4));
+}
+
+.audio-player {
+  padding-top: 15px;
+}
+
+@-webkit-keyframes eq {
+  0% {
+    height: 3px;
+  }
+  50% {
+    height: 20px;
+  }
+  100% {
+    height: 3px;
+  }
+}
+
+@keyframes eq {
+  0% {
+    height: 3px;
+  }
+  50% {
+    height: 20px;
+  }
+  100% {
+    height: 3px;
+  }
+}
+.eq {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.eq__bar {
+  width: 4px;
+  background: #fff;
+  -webkit-filter: drop-shadow(0 0 5px #fff);
+          filter: drop-shadow(0 0 5px #fff);
+}
+
+.eq__bar:nth-child(1) {
+  -webkit-animation: eq .8s ease-in-out infinite 0s;
+          animation: eq .8s ease-in-out infinite 0s;
+}
+
+.eq__bar:nth-child(2) {
+  -webkit-animation: eq .8s ease-in-out infinite .2s;
+          animation: eq .8s ease-in-out infinite .2s;
+}
+
+.eq__bar:nth-child(3) {
+  -webkit-animation: eq .8s ease-in-out infinite .4s;
+          animation: eq .8s ease-in-out infinite .4s;
+}
+
+.h-hide {
+  display: none;
+}
+
+.h-show {
+  display: block;
+}
+
+.pl-container { display: none; }
+
+
+/*************
+ * Responsive
+ *************/
+/* Portrait */
+@media only screen and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+
+  .ap { height: 50px; }
+
+  .bottom-nav__inner { width: 100%; }
+
+  .bottom-nav__item.bottom-nav__item--prevsurah, .bottom-nav__item.bottom-nav__item--nextsurah { width: 42.5%; padding-top: 9px; }
+
+  .bottom-nav__item.bottom-nav__item--prevsurah { text-align: left; padding-left: 10px; }
+
+  .bottom-nav__item.bottom-nav__item--nextsurah { text-align: right; padding-right: 10px; }
+
+  .bottom-nav__item--surahplayer { width: 15%; }
+
+  .bottom-nav__item--surahplayer { padding: 0 10px; }
+
+  a.surah-nav-links { font-size: 14px!important; }
+
+  .track { display: none; }
+
+  .ap__controls, .ap button { display: block !important; }
+
+  button.ap__controls.ap__controls--toggle { margin-top: 0px; }
+
+  .ap .chevron-left, .ap .chevron-right { width: 25px; height: 25px; }
+
+  .icon-play { width: 45px; height: 45px; }
+
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+
+  .bottom-nav__inner { width: 100%; }
+
+  .bottom-nav__item--surahplayer { width: 50%; }
+
+  .bottom-nav__item.bottom-nav__item--prevsurah, .bottom-nav__item.bottom-nav__item--nextsurah { width: 25%; }
+
+}

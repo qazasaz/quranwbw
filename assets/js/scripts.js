@@ -363,7 +363,7 @@ $('.ayah, s-w, .f-t')
       //$(".ayah." + ayah_number).get(0).scrollIntoView();
       var ayah_ayah = $(this).attr('class').split(' ')[1]; // ayah number
       var ayah_audio_file = ('00' + SURAH_NUMBER).slice(-3) + ('00' + ayah_ayah).slice(-3);
-      var audio_url = SURAH_AUDIO_URL + "ayah/arabic/" + ayah_audio_file + ".mp3";
+      var audio_url = SURAH_AUDIO_URL + "ayahs/arabic/" + ayah_audio_file + ".mp3";
     
     }
 
@@ -380,7 +380,7 @@ $('.ayah, s-w, .f-t')
 
       var ayah_ayah = $(this.parentNode).attr('class').split(' ')[2]; // ayah number
       var ayah_audio_file = ('00' + SURAH_NUMBER).slice(-3) + ('00' + ayah_ayah).slice(-3);
-      var audio_url = SURAH_AUDIO_URL + "ayah/english/" + ayah_audio_file + ".mp3";
+      var audio_url = SURAH_AUDIO_URL + "ayahs/english/" + ayah_audio_file + ".mp3";
 
     }
 

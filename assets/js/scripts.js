@@ -367,8 +367,7 @@ $('.ayah, s-w, .f-t')
     
     }
 
-    //else if(current_class == "word") {
-    else if(current_class == "w") {
+    else if(current_class == "w" || current_class == "word") {
 
       var word_ayah = $(this.parentNode).attr('class').split(' ')[1]; // ayah number
       var word_word = $(this).attr('class').split(' ')[1]; // word number

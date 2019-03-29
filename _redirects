@@ -4,6 +4,8 @@
 # ayah rewrite
 /:surah/:ayah /:surah#:ayah
 
+/:surah/:ayah* /:surah#:splat
+
 # about page redirect
 /about https://github.com/quranwbw/quranwbw#readme
 

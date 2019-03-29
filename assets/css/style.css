@@ -367,7 +367,7 @@ w-t, w-a, w-l {
   display: block; 
 }
 
-.word, s-w {
+.word, .w, s-w {
   text-align: center;
   float: right;
   margin: 0 10px;

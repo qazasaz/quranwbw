@@ -367,8 +367,9 @@ $('.ayah, s-w, .f-t')
     
     }
 
-    else if(current_class == "word") {
-    
+    //else if(current_class == "word") {
+    else if(current_class == "w") {
+
       var word_ayah = $(this.parentNode).attr('class').split(' ')[1]; // ayah number
       var word_word = $(this).attr('class').split(' ')[1]; // word number
       var word_audio_file = SURAH_NUMBER + "/" + ('00' + SURAH_NUMBER).slice(-3) + "_" + ('00' + word_ayah).slice(-3) + "_" + ('00' + word_word).slice(-3);

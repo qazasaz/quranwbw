@@ -1,3 +1,5 @@
+var SURAH_AUDIO_URL = "https://quranwbw.com/audios/";
+
 function font(type, modification) {
 
   if(type == "w-t") {
@@ -349,8 +351,6 @@ $('.ayah, s-w, .f-t')
     var current_class = $(this).attr('class').split(' ')[0]; //0 to retrieve first class
 
     var ayah_number = $(this).attr('class').split(' ')[1];
-
-    var SURAH_AUDIO_URL = "https://quranwbw.com/audios/";
 
     if(current_class == "ayah") {
 

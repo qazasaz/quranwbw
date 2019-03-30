@@ -535,7 +535,7 @@ $(document).ready(function(){
 (function ($) {
   $(document).ready(function () {
     var $nav = $('.fixed-top');
-    //var $audioplayer = $('.audio-player');
+    var $bottom_nav = $('.bottom-nav');
     var lastScrollTop = 0;
     var direction;
     $(function () {
@@ -544,12 +544,12 @@ $(document).ready(function(){
         if (lastScrollTop < scrollTop && scrollTop > $nav.outerHeight() && direction != 'down') {
             //Scroll down
             $nav.stop().fadeOut();
-            //$audioplayer.stop().fadeOut();
+            $bottom_nav.stop().fadeOut();
             direction = 'down';
         } else if (lastScrollTop > scrollTop  && direction != 'up') {
             // Scroll up
             $nav.stop().fadeIn();
-            //$audioplayer.stop().fadeIn();
+            $bottom_nav.stop().fadeIn();
             direction = 'up';
         }
         lastScrollTop = scrollTop;

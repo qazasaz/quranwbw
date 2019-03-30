@@ -1,8 +1,3 @@
-//============================================================
-// Functions for display settings
-
-var SURAH_AUDIO_URL = "https://quranwbw.com/audios/";
-
 function font(type, modification) {
 
   if(type == "w-t") {
@@ -355,6 +350,8 @@ $('.ayah, s-w, .f-t')
 
     var ayah_number = $(this).attr('class').split(' ')[1];
 
+    var SURAH_AUDIO_URL = "https://quranwbw.com/audios/";
+
     if(current_class == "ayah") {
 
       $(".ayah").removeClass("ayah-hover");
@@ -468,16 +465,6 @@ $(document).ready(function(){
 });
 
 /*
-$(document).ready(function(){ 
-
-  $('.ayah').attr('title','Click to play the ayah');
-  $('.word').attr('title','Click to play the word');
-  $('.full-translation').attr('title','Click to play the translation');
-
-});
-*/
-
-/*
 $(document).ready(function(){
   if ($('#back-to-top').length) {
     var scrollTrigger = 100, // px
@@ -503,34 +490,8 @@ $(document).ready(function(){
 });
 */
 
-/*
-$(document).ready(function(){
 
-  if( ($("div.TR:visible").length === 0) || ($("div.TRL:visible").length === 0) ) {
-    $('.full-translation').css("padding-top", "20px");
-    $('.ayah-number').css("margin-top", "35px");
-    $('.AR').css("margin-bottom", "8px");
-  }
-  else {
-    $('.full-translation').css("padding-top", "0px");
-    $('.ayah-number').css("margin-top", "60px");
-    $('.AR').css("margin-bottom", "-5px");
-  }
-
-});
-*/
-
-
-//============================================================
-/*!
- * jQuery script to hide bootstrap fixed navbar on scroll down and reveal on scroll up.
- * 
- * Copyright 2016 James Buncle
- * 
- * Released under the MIT license.
- * http://jquery.org/license
- *
- */
+/* Copyright 2016 James Buncle */
 (function ($) {
   $(document).ready(function () {
     var $nav = $('.fixed-top');

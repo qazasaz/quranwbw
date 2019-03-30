@@ -370,7 +370,7 @@ w-t, w-a, w-l {
 .word, .w, s-w {
   text-align: center;
   float: right;
-  margin: 0 10px;
+  margin: 0 8px;
   cursor: pointer;
 }
 

@@ -1,7 +1,6 @@
 //============================================================
 // Functions for display settings
 
-//var SURAH_AUDIO_URL = "https://gitlab.com/quranwbw/audios/raw/master/";
 var SURAH_AUDIO_URL = "https://quranwbw.com/audios/";
 
 function font(type, modification) {
@@ -548,6 +547,11 @@ $(document).ready(function(){
             direction = 'down';
         } else if (lastScrollTop > scrollTop  && direction != 'up') {
             // Scroll up
+            $nav.stop().fadeIn();
+            $bottom_nav.stop().fadeIn();
+            direction = 'up';
+        } else if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            // Scrolled to bottom
             $nav.stop().fadeIn();
             $bottom_nav.stop().fadeIn();
             direction = 'up';

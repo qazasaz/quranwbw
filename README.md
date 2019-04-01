@@ -4,7 +4,7 @@
 
 <br>
 
-<p align="center">Bismillahi Ar-Rahman Ar-Raheem</p>
+**<p align="center">Bismillahi Ar-Rahman Ar-Raheem</p>**
 Quranwbw.com is a word-by-word Quran learning website where you can see the translation and transliteration for each word along with audio for each word and each ayah. Quranwbw.com has been made with the desire to help others and myself understand the Holy Quran.
 
 ### Previously...

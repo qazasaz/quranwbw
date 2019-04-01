@@ -5,7 +5,7 @@
 <br>
 
 **<p align="center">Bismillahi Ar-Rahman Ar-Raheem</p>**
-Quranwbw.com is a word-by-word Quran learning website where you can see the translation and transliteration for each word along with audio for each word and each ayah. Quranwbw.com has been made with the desire to help others and myself understand the Holy Quran.
+Quranwbw.com is a word-by-word Quran learning website where you can see the translation and transliteration for each word along with audio for each word and each ayah. Quranwbw.com has been made with the desire to help others and myself understand the Holy Quran better.
 
 ### Previously...
 Quranwbw.com previously used PHP and MySql in the backend to fetch the data from the database and display the results dynamically. I have however decided to switch to a complete static website. The backend is currently being used as the static files generator. 

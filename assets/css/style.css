@@ -183,6 +183,13 @@ button {
   background-color: var(--gold);
 }
 
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.45s ease;
+}
+
 .bg-gold {
   background-color: var(--gold);
 }

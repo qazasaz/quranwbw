@@ -335,7 +335,7 @@ function checkKey(e) {
 
 //============================================================
 
-$('.ayah, s-w, .f-t')
+$('.a, s-w, .f-t')
 
   // To stop overlapping
   .each(function(event) { $(this).data('audio-object', new Audio()); })
@@ -349,38 +349,39 @@ $('.ayah, s-w, .f-t')
     if (e.stopPropagation) e.stopPropagation();
     
     var current_class = $(this).attr('class').split(' ')[0]; //0 to retrieve first class
+    var second_class = $(this).attr('class').split(' ')[1]; //1 to retrieve second class
 
     var ayah_number = $(this).attr('class').split(' ')[1];
 
-    if(current_class == "ayah") {
+    if(current_class == "a" || current_class == "ayah") {
 
-      $(".ayah").removeClass("ayah-hover");
-      $(".ayah." + ayah_number).addClass("ayah-hover");
-      //$(".ayah." + ayah_number).get(0).scrollIntoView();
+      $(".a").removeClass("ayah-hover");
+      $(".a." + ayah_number).addClass("ayah-hover");
+      //$(".a." + ayah_number).get(0).scrollIntoView();
       var ayah_ayah = $(this).attr('class').split(' ')[1]; // ayah number
       var ayah_audio_file = ('00' + SURAH_NUMBER).slice(-3) + ('00' + ayah_ayah).slice(-3);
       var audio_url = SURAH_AUDIO_URL + "ayahs/arabic/" + ayah_audio_file + ".mp3";
     
     }
 
-    else if(current_class == "w" || current_class == "word") {
+    else if(second_class == "f-t") {
 
-      var word_ayah = $(this.parentNode).attr('class').split(' ')[1]; // ayah number
-      var word_word = $(this).attr('class').split(' ')[1]; // word number
-      var word_audio_file = SURAH_NUMBER + "/" + ('00' + SURAH_NUMBER).slice(-3) + "_" + ('00' + word_ayah).slice(-3) + "_" + ('00' + word_word).slice(-3);
-      var audio_url = SURAH_AUDIO_URL + "words/" + word_audio_file + ".mp3";
+      var ayah_ayah = $(this.parentNode).attr('class').split(' ')[2]; // ayah number
+      var ayah_audio_file = ('00' + SURAH_NUMBER).slice(-3) + ('00' + ayah_ayah).slice(-3);
+      var audio_url = SURAH_AUDIO_URL + "ayahs/english/" + ayah_audio_file + ".mp3";
    
     }
     
     else {
 
-      var ayah_ayah = $(this.parentNode).attr('class').split(' ')[2]; // ayah number
-      var ayah_audio_file = ('00' + SURAH_NUMBER).slice(-3) + ('00' + ayah_ayah).slice(-3);
-      var audio_url = SURAH_AUDIO_URL + "ayahs/english/" + ayah_audio_file + ".mp3";
+      var word_ayah = $(this.parentNode).attr('class').split(' ')[1]; // ayah number
+      var word_word = $(this).attr('class').split(' ')[0]; // word number
+      var word_audio_file = SURAH_NUMBER + "/" + ('00' + SURAH_NUMBER).slice(-3) + "_" + ('00' + word_ayah).slice(-3) + "_" + ('00' + word_word).slice(-3);
+      var audio_url = SURAH_AUDIO_URL + "words/" + word_audio_file + ".mp3";
 
     }
 
-    $('.ayah, s-w, .f-t').each(function() {
+    $('.a, s-w, .f-t').each(function() {
 
       var audio = $(this).data('audio-object');
 
@@ -398,18 +399,19 @@ $('.ayah, s-w, .f-t')
 
     clickedAudio.play();
 
-    if(current_class == "ayah") clickedAudio.addEventListener('timeupdate', word_highlighter);
+    if(current_class == "a" || current_class == "ayah") 
+      clickedAudio.addEventListener('timeupdate', word_highlighter);
 
     clickedAudio.onended = function() { 
       $("s-w w-a").removeClass("AR-hover"); 
-      $(".ayah." + ayah_number).removeClass("ayah-hover"); 
+      $(".a." + ayah_number).removeClass("ayah-hover"); 
     };
 
     //==================================================================
     // Word highlighter
     function word_highlighter({ ayah_no = ayah_number } = {}) {
 
-      var number_of_words = $('.ayah.' + ayah_no + ' s-w').length;
+      var number_of_words = $('.a.' + ayah_no + ' s-w').length;
 
       for (var i = 1 ; i <= number_of_words; i++) {
 

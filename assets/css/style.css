@@ -336,14 +336,14 @@ a.surah-selector-link:hover {
   margin-top: -28px;
 }
 
-.ayah {
+.ayah, .a {
   display: inline-block;
   width: 100%;
   padding: 10px 0px 10px 0px;
   /*border: 1px solid transparent;*/
 }
 
-.ayah:hover, .ayah-hover, .full-translation:hover, .f-t:hover {
+.ayah:hover, .a:hover, .ayah-hover, .full-translation:hover, .f-t:hover {
   background-color: #f7f7f799;
   cursor: pointer;
   /*  
@@ -435,6 +435,7 @@ w-t, w-a, w-l {
 
 .ayah-number-before, .a-n-b {
   display: block;
+  text-align: right!important;
 }
 
 .ayah-number-after, .a-n-a {
@@ -807,7 +808,7 @@ and (orientation: landscape) {
     font-size: 40px;
   }
 
-  .ayah {
+  .ayah, .a {
     margin-right: -40px;
   }
 

@@ -10,11 +10,11 @@ body {
 	color: #fff;
 }
 
-.ayah:hover, .full-translation:hover, .f-t:hover {
+.ayah:hover, .a:hover, .full-translation:hover, .f-t:hover {
 	background-color: #080808;
 }
 
-.bg-gold, .btn-nav, .ayah, .full-translation, .f-t {
+.bg-gold, .btn-nav, .ayah, .a, .full-translation, .f-t {
 	background-color: #000;
 }
 

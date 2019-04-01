@@ -266,7 +266,7 @@ $(document).ready(function() {
   if (localStorage.getItem("toggle_font_change") === null) { toggle_font_change.innerHTML = "IndoPak"; }
   else { toggle_font_change.innerHTML = toggle_font; }
   //============================================================
-  
+  /*
   var toggle_translation = localStorage.getItem('toggle_translation_change');
   var toggle_translation_value = localStorage.getItem('toggle_translation_value');
 
@@ -283,6 +283,7 @@ $(document).ready(function() {
 
   if (localStorage.getItem("toggle_transliteration_change") === null) { toggle_transliteration_change.innerHTML = "Visible"; }
   else { toggle_transliteration_change.innerHTML = toggle_transliteration; }
+  */
   //============================================================
 
   var toggle_theme_mode = localStorage.getItem('toggle_theme_mode_change');

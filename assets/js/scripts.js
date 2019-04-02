@@ -2,7 +2,31 @@ var SURAH_AUDIO_URL = "https://quranwbw.com/audios/";
 
 function font(type, modification) {
 
-  if(type == "w-t") {
+  if(type == "w-a") {
+    
+    var fontSize = parseInt($("w-a").css("font-size"), 10);
+
+    if(modification == "increase") {
+
+      var updated_font_size = fontSize + 2 + "px";
+
+      $("w-a").css("font-size", updated_font_size);
+
+    }
+
+    else if(modification == "decrease") {
+
+      var updated_font_size = fontSize - 2 + "px";
+
+      $("w-a").css("font-size", updated_font_size);
+
+    }
+
+    localStorage.setItem('arabic_font_value', updated_font_size);
+
+  }
+
+  else if(type == "w-t") {
     
     var fontSize = parseInt($("w-t").css("font-size"), 10);
 
@@ -17,14 +41,6 @@ function font(type, modification) {
     else if(modification == "decrease") {
 
       var updated_font_size = fontSize - 2 + "px";
-
-      $("w-t").css("font-size", updated_font_size);
-
-    }
-
-    else if(modification == "default") {
-
-      var updated_font_size = 10 + "px";
 
       $("w-t").css("font-size", updated_font_size);
 
@@ -49,14 +65,6 @@ function font(type, modification) {
     else if(modification == "decrease") {
 
       var updated_font_size = fontSize - 2 + "px";
-
-      $("w-l").css("font-size", updated_font_size);
-
-    }
-
-    else if(modification == "default") {
-
-      var updated_font_size = 10 + "px";
 
       $("w-l").css("font-size", updated_font_size);
 
@@ -467,58 +475,38 @@ $(document).ready(function(){
 
 });
 
-/*
-$(document).ready(function(){
-  if ($('#back-to-top').length) {
-    var scrollTrigger = 100, // px
-      backToTop = function () {
-        var scrollTop = $(window).scrollTop();
-        if (scrollTop > scrollTrigger) {
-          $('#back-to-top').addClass('show');
-        } else {
-          $('#back-to-top').removeClass('show');
-        }
-      };
-    backToTop();
-    $(window).on('scroll', function () {
-      backToTop();
-    });
-    $('#back-to-top').on('click', function (e) {
-      e.preventDefault();
-      $('html,body').animate({
-        scrollTop: 0
-      }, 700);
-    });
-  }
-});
-*/
-
-
 /* Copyright 2016 James Buncle */
 (function ($) {
   $(document).ready(function () {
     var $nav = $('.fixed-top');
     var $bottom_nav = $('.bottom-nav');
     var lastScrollTop = 0;
+    var screen_size = 850;
     var direction;
     $(function () {
       $(window).scroll(function () {
         var scrollTop = $(this).scrollTop();
         if (lastScrollTop < scrollTop && scrollTop > $nav.outerHeight() && direction != 'down') {
             //Scroll down
-            $nav.stop().fadeOut();
-            $bottom_nav.stop().fadeOut();
-            direction = 'down';
+            if ($(window).width() < screen_size) {
+              $nav.stop().fadeOut();
+              $bottom_nav.stop().fadeOut();
+              direction = 'down';
+            }
         } else if (lastScrollTop > scrollTop  && direction != 'up') {
             // Scroll up
-            $nav.stop().fadeIn();
-            $bottom_nav.stop().fadeIn();
-            direction = 'up';
+            if ($(window).width() < screen_size) {
+              $nav.stop().fadeIn();
+              $bottom_nav.stop().fadeIn();
+              direction = 'up';
+            }
         } else if($(window).scrollTop() + $(window).height() == $(document).height()) {
             // Scrolled to bottom
-            $nav.stop().fadeIn();
-            $bottom_nav.stop().fadeIn();
-            direction = 'up';
+            if ($(window).width() < screen_size) {
+              $nav.stop().fadeIn();
+              $bottom_nav.stop().fadeIn();
+              direction = 'up';
+            }
         }
         lastScrollTop = scrollTop;
       });

@@ -6,8 +6,12 @@ body {
 	color: #fff;
 }
 
-.AR:hover, w-a:hover {
+.AR:hover, w-a:hover, .AR-hover {
 	color: #fff;
+}
+
+.AR-hover {
+  	border-bottom: 1px solid #fff;
 }
 
 .ayah:hover, .a:hover, .full-translation:hover, .f-t:hover {
@@ -61,6 +65,10 @@ a.surah-nav-links, a.about-link {
 	background-color: #000;
 }
 
+.d-i-highlight {
+  background-color: #000;
+  color: #fff;
+}
 
 .bottom-nav {
 	background-color: #000!important;

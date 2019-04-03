@@ -12,6 +12,8 @@ function font(type, modification) {
 
       $("w-a").css("font-size", updated_font_size);
 
+      $(".ar-c-f").text("(" + updated_font_size + ")");
+
     }
 
     else if(modification == "decrease") {
@@ -19,6 +21,8 @@ function font(type, modification) {
       var updated_font_size = fontSize - 2 + "px";
 
       $("w-a").css("font-size", updated_font_size);
+
+      $(".ar-c-f").text("(" + updated_font_size + ")");
 
     }
 
@@ -36,6 +40,8 @@ function font(type, modification) {
 
       $("w-t").css("font-size", updated_font_size);
 
+      $(".tr-c-f").text("(" + updated_font_size + ")");
+
     }
 
     else if(modification == "decrease") {
@@ -43,6 +49,8 @@ function font(type, modification) {
       var updated_font_size = fontSize - 2 + "px";
 
       $("w-t").css("font-size", updated_font_size);
+
+      $(".tr-c-f").text("(" + updated_font_size + ")");
 
     }
 
@@ -60,6 +68,8 @@ function font(type, modification) {
 
       $("w-l").css("font-size", updated_font_size);
 
+      $(".tl-c-f").text("(" + updated_font_size + ")");
+
     }
 
     else if(modification == "decrease") {
@@ -67,6 +77,8 @@ function font(type, modification) {
       var updated_font_size = fontSize - 2 + "px";
 
       $("w-l").css("font-size", updated_font_size);
+
+      $(".tl-c-f").text("(" + updated_font_size + ")");
 
     }
 
@@ -263,6 +275,13 @@ $(document).ready(function() {
   $("w-a").css("font-size", arabic_font_value);
   $("w-t").css("font-size", translation_font_value);
   $("w-l").css("font-size", transliteration_font_value);
+
+  if(arabic_font_value != null || translation_font_value != null || transliteration_font_value != null) {
+    $(".ar-c-f").text("(" + arabic_font_value + ")");
+    $(".tr-c-f").text("(" + translation_font_value + ")");
+    $(".tl-c-f").text("(" + transliteration_font_value + ")");
+  }
+
   $(".f-t").css("font-size", full_tr_font_value);
   //============================================================
   
@@ -356,38 +375,36 @@ $('.a, s-w, .f-t')
     e.cancelBubble = true;
 
     if (e.stopPropagation) e.stopPropagation();
-    
-    var current_class = $(this).attr('class').split(' ')[0]; //0 to retrieve first class
-    var second_class = $(this).attr('class').split(' ')[1]; //1 to retrieve second class
 
-    var ayah_number = $(this).attr('class').split(' ')[1];
+    var tag_name = $(this).prop("tagName");
 
-    if(current_class == "a" || current_class == "ayah") {
+    if(tag_name == "DIV") {
 
-      $(".a").removeClass("ayah-hover");
-      $(".a." + ayah_number).addClass("ayah-hover");
-      //$(".a." + ayah_number).get(0).scrollIntoView();
-      var ayah_ayah = $(this).attr('class').split(' ')[1]; // ayah number
-      var ayah_audio_file = ('00' + SURAH_NUMBER).slice(-3) + ('00' + ayah_ayah).slice(-3);
-      var audio_url = SURAH_AUDIO_URL + "ayahs/arabic/" + ayah_audio_file + ".mp3";
-    
-    }
+      var first_class = $(this).attr('class').split(' ')[0];
+      var second_class = $(this).attr('class').split(' ')[1];
 
-    else if(second_class == "f-t") {
+      if(first_class == "a") {
+        var ayah_number = $(this).attr('class').split(' ')[1];
+        $(".a").removeClass("ayah-hover");
+        $(".a." + ayah_number).addClass("ayah-hover");
+        var ayah_ayah = $(this).attr('class').split(' ')[1];
+        var ayah_audio_file = ('00' + SURAH_NUMBER).slice(-3) + ('00' + ayah_ayah).slice(-3);
+        var audio_url = SURAH_AUDIO_URL + "ayahs/arabic/" + ayah_audio_file + ".mp3";
+      }
 
-      var ayah_ayah = $(this.parentNode).attr('class').split(' ')[2]; // ayah number
-      var ayah_audio_file = ('00' + SURAH_NUMBER).slice(-3) + ('00' + ayah_ayah).slice(-3);
-      var audio_url = SURAH_AUDIO_URL + "ayahs/english/" + ayah_audio_file + ".mp3";
-   
-    }
-    
-    else {
+      else if(second_class == "f-t") {
+        var ayah_ayah = $(this.parentNode).attr('class').split(' ')[2];
+        var ayah_audio_file = ('00' + SURAH_NUMBER).slice(-3) + ('00' + ayah_ayah).slice(-3);
+        var audio_url = SURAH_AUDIO_URL + "ayahs/english/" + ayah_audio_file + ".mp3";
+      }
 
-      var word_ayah = $(this.parentNode).attr('class').split(' ')[1]; // ayah number
-      var word_word = $(this).attr('class').split(' ')[0]; // word number
+    } 
+
+    else if(tag_name = "SW") {
+      var word_ayah = $(this.parentNode).attr('class').split(' ')[1];
+      var word_word = $(this).attr('w');
       var word_audio_file = SURAH_NUMBER + "/" + ('00' + SURAH_NUMBER).slice(-3) + "_" + ('00' + word_ayah).slice(-3) + "_" + ('00' + word_word).slice(-3);
       var audio_url = SURAH_AUDIO_URL + "words/" + word_audio_file + ".mp3";
-
     }
 
     $('.a, s-w, .f-t').each(function() {
@@ -404,43 +421,41 @@ $('.a, s-w, .f-t')
 
     var clickedAudio = $(this).data('audio-object');
 
-    if(!clickedAudio.src) { clickedAudio.src = audio_url; }
+    if(!clickedAudio.src) clickedAudio.src = audio_url;
 
     clickedAudio.play();
 
-    if(current_class == "a" || current_class == "ayah") 
-      clickedAudio.addEventListener('timeupdate', word_highlighter);
+    if(tag_name == "DIV") {
+      var first_class = $(this).attr('class').split(' ')[0];
+      if(first_class == "a") clickedAudio.addEventListener('timeupdate', word_highlighter);
+    }
 
     clickedAudio.onended = function() { 
       $("s-w w-a").removeClass("AR-hover"); 
       $(".a." + ayah_number).removeClass("ayah-hover"); 
     };
 
-    //==================================================================
-    // Word highlighter
     function word_highlighter({ ayah_no = ayah_number } = {}) {
 
       var number_of_words = $('.a.' + ayah_no + ' s-w').length;
 
-      for (var i = 1 ; i <= number_of_words; i++) {
+      for (var word_no = 1 ; word_no <= number_of_words; word_no++) {
 
-        var prev_i = i - 1;
+        var prev_word_no = word_no - 1;
 
-        var time = $(".s-a." + ayah_no + " s-w." + i).attr("data-wts");
-        //var time = $(".word." + i).attr('class').split(' ')[3];
+        var time = $(".s-a." + ayah_no + " s-w[w=" + word_no + "]").attr("t");
 
         if(time < clickedAudio.currentTime) {
 
-          if (i > 0) $(".s-a." + ayah_no + " s-w." + prev_i + " w-a").removeClass("AR-hover");
+          if (word_no > 0) $(".s-a." + ayah_no + " s-w[w=" + prev_word_no + "] w-a").removeClass("AR-hover");
 
-          $(".s-a." + ayah_no + " s-w." + i + " w-a").addClass("AR-hover");
+          $(".s-a." + ayah_no + " s-w[w=" + word_no + "] w-a").addClass("AR-hover");
 
         }
 
       }
 
     }
-    //==================================================================
 
 });
 
@@ -481,7 +496,7 @@ $(document).ready(function(){
     var $nav = $('.fixed-top');
     var $bottom_nav = $('.bottom-nav');
     var lastScrollTop = 0;
-    var screen_size = 850;
+    var screen_size = 700;
     var direction;
     $(function () {
       $(window).scroll(function () {

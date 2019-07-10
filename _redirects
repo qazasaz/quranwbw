@@ -1,11 +1,17 @@
+# surah json data files
+/data/* /surahs/data/:splat 200
+
 # surah pages rewrite
 /:surah /surahs/:surah 200
 
 # ayah rewrite
 /:surah/:ayah /:surah#:ayah
 
+# ayah end rewrite
+/:surah/:ayah-:end /:surah#:ayah
+
 # about page redirect
 /about https://github.com/quranwbw/quranwbw#readme
 
 # audio links rewrite
-/audios/* https://gitlab.com/quranwbw/audios/raw/master/:splat 200
+/audios/* https://gitlab.com/marwanansari/quranwbw-audios/raw/master/:splat 200

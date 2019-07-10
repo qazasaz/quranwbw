@@ -2,11 +2,11 @@
 	margin: 0 6px;
 }
 
-.AR, w-a {
+.AR, w-a, wa {
 	margin: 10px 0px 0px -5px;
 }
 
-.TR, .TRL, w-t, w-l {
+.TR, .TRL, w-t, w-l, wt, wl {
 	display: none;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .ayah-number, .a-n {
-	margin-top: 75px;
+	margin-top: 85px;
 }
 
 .ayah-number-after .ayah-number, .a-n-a .a-n {

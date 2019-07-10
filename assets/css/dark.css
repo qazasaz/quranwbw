@@ -1,21 +1,43 @@
-body {
+body, .homepage {
 	background-color: #000;
 }
 
-.AR, w-a, .ayah-number, .a-n, .btn-nav, .surah-nav-links {
+.homepage-title, .title, .index-surah-no {
 	color: #fff;
 }
 
-.AR:hover, w-a:hover, .AR-hover {
+.tagline {
+	color: #d8d8d8;
+}
+
+.table .table-row{
+	background-color: #000;
+}
+
+.table a>.table-row {
+	border: 1px solid transparent;
+}
+
+.table a:hover>.table-row {
+	background-color: #00000099;
+    border-color: #ffffff;
+}
+
+
+.AR, w-a, .ayah-number, .a-n, .btn-nav, .surah-nav-links, wa, .homepage-title {
 	color: #fff;
 }
 
-.AR-hover {
+.AR:hover, w-a:hover, .AR-hover, .w-a-hover, wa:hover, .wa-hover {
+	color: #fff;
+}
+
+.AR-hover, .w-a-hover, .wa-hover {
   	border-bottom: 1px solid #fff;
 }
 
-.ayah:hover, .a:hover, .full-translation:hover, .f-t:hover {
-	background-color: #080808;
+.ayah:hover, .a:hover, .ayah-hover, .full-translation:hover, .f-t:hover {
+	background-color: #171717bf!important;
 }
 
 .bg-gold, .btn-nav, .ayah, .a, .full-translation, .f-t {
@@ -33,11 +55,12 @@ body {
 }
 
 hr {
-	border-top: 1px solid rgb(31, 31, 31);
+	border-top: 1px solid rgb(69, 69, 69);
 }
 
 .bismillah {
-	background-image: url("../images/b-w.png");
+	-webkit-filter: invert(1);
+   	filter: invert(1);
 }
 
 .btn, .btn-gold {
@@ -54,11 +77,14 @@ a.surah-nav-links, a.about-link {
 }
 
 .chevron-left, .chevron-right {
-    background-image: url(../images/chevron-white.svg);
+    background-image: url(../images/chevron.svg);
+    filter: brightness(0) invert(1);
 }
 
 .loader {
-	background: url('../images/loading-white.svg') 50% 50% no-repeat #79797978;
+	background: url('../images/loading.png') 50% 50% no-repeat transparent;
+	background-size: 150px;
+	filter: brightness(0) invert(1);
 }
 
 .dropdown-menu::-webkit-scrollbar, .dropdown-menu::-webkit-scrollbar-thumb {
@@ -73,12 +99,24 @@ a.surah-nav-links, a.about-link {
 .bottom-nav {
 	background-color: #000!important;
 	border-top: 1px solid #939393!important;
+	box-shadow: none;
 }
 
-.icon-prev, .icon-next, .icon-play, .icon-volume-on, .icon-volume-off, .icon-repeat, .icon-playlist {
-	fill: #c3c3c3
+.bottom-nav-surahname, #bottom-nav-surahayah {
+	color: #fff;
 }
 
-.track__time, .track__title {
-	color: #c3c3c3;
+.play-icon {
+  background-image: url('../images/play.png');
+  filter: invert(1);
+}
+
+.pause-icon {
+  background-image: url('../images/pause.png');
+  filter: invert(1);
+}
+
+a.last-read-link {
+  color: #fff;
+  border-bottom: 1px solid #fff;
 }

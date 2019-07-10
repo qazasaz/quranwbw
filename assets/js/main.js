@@ -1,119 +1,73 @@
+// audio urls
+var audio_url_main = "https://quranwbw.github.io/",
+	audio_url_arabic = audio_url_main + "audio-ayah-arabic/",
+	audio_url_english = audio_url_main + "audio-ayah-english/",
+	audio_url_words = audio_url_main + "audio-words-new/";
+
 function font(type, modification) {
-
   var updated_font_size;
-  
   if(type == "wa") {
-    
     var fontSize = parseInt($("wa").css("font-size"), 10);
-
     if(modification == "increase") {
-
       if(fontSize >= 112) updated_font_size = "112px";
       else updated_font_size = fontSize + 2 + "px";
-
       $("wa").css("font-size", updated_font_size);
-
       $(".ar-c-f").text("(" + updated_font_size + ")");
-
     }
-
     else if(modification == "decrease") {
-
       if(fontSize <= 16) updated_font_size = "16px";
       else updated_font_size = fontSize - 2 + "px";
-
       $("wa").css("font-size", updated_font_size);
-
       $(".ar-c-f").text("(" + updated_font_size + ")");
-
     }
-
     localStorage.setItem('arabic_font_value', updated_font_size);
-
   }
 
   else if(type == "wt") {
-    
     var fontSize = parseInt($("wt").css("font-size"), 10);
-
     if(modification == "increase") {
-
       if(fontSize >= 70) updated_font_size = "70px";
       else updated_font_size = fontSize + 2 + "px";
-
       $("wt").css("font-size", updated_font_size);
-
       $(".tr-c-f").text("(" + updated_font_size + ")");
-
     }
-
     else if(modification == "decrease") {
-
       if(fontSize <= 8) updated_font_size = "8px";
       else updated_font_size = fontSize - 2 + "px";
-
       $("wt").css("font-size", updated_font_size);
-
       $(".tr-c-f").text("(" + updated_font_size + ")");
-
     }
-
     localStorage.setItem('translation_font_value', updated_font_size);
-
   }
 
   else if(type == "wl") {
-    
     var fontSize = parseInt($("wl").css("font-size"), 10);
-
     if(modification == "increase") {
-
       if(fontSize >= 70) updated_font_size = "70px";
       else updated_font_size = fontSize + 2 + "px";
-
       $("wl").css("font-size", updated_font_size);
-
       $(".tl-c-f").text("(" + updated_font_size + ")");
-
     }
-
     else if(modification == "decrease") {
-
       if(fontSize <= 8) updated_font_size = "8px";
       else updated_font_size = fontSize - 2 + "px";
-
       $("wl").css("font-size", updated_font_size);
-
       $(".tl-c-f").text("(" + updated_font_size + ")");
-
     }
-
     localStorage.setItem('transliteration_font_value', updated_font_size);
-
   }
 
   else if(type == "f-t") {
-    
     var fontSize = parseInt($(".f-t").css("font-size"), 10); 
-
     if(modification == "increase") {
-
       var updated_font_size = fontSize + 2 + "px";
-
       $(".f-t").css("font-size", updated_font_size);
-
     }
-
     else if(modification == "decrease") {
-
       var updated_font_size = fontSize - 2 + "px";
-
       $(".f-t").css("font-size", updated_font_size);
-
     }
-
     localStorage.setItem('full_tr_font_value', updated_font_size);
-
   }
 
 }
@@ -310,9 +264,6 @@ function loadAyahs(surah_no, ayah_from, ayah_till) {
     
     }
 
-    $(".bismillah").css("display", "block");
-    $(".loader").css("display", "none");
-
   });
 
 }
@@ -335,24 +286,14 @@ function playSurah(totalAyahs, currentAyah) {
     // var recitor = "Yasser_Ad-Dussary_128kbps/";
     // var recitor = "Alafasy_128kbps/";
 
-    // Github links - caches
-    // const audio = new Audio("https://quranwbw.github.io/audio-ayah-arabic/" + ayah_audio_file + ".mp3");
-    // if(currentAyah < totalAyahs) {
-    //   new Audio("https://quranwbw.github.io/audio-ayah-arabic/" + ayah_audio_file_next + ".mp3");
-    // }
-
-    // Gitlab links - does not caches
-    // const audio = new Audio(surah_audio_url + "ayahs/arabic/" + ayah_audio_file + ".mp3");
-    // const audionext = new Audio(surah_audio_url + "ayahs/arabic/" + ayah_audio_file_next + ".mp3");
-    
     // const audio = new Audio("http://everyayah.com/data/"+recitor+ayah_audio_file+".mp3");
     // if(currentAyah < totalAyahs) {
     //   const audionext = new Audio("http://everyayah.com/data/"+recitor+ayah_audio_file_next+".mp3");
     // }
 
-    var audio_url = "https://quranwbw.github.io/audio-ayah-arabic/" + ayah_audio_file + ".mp3";
+    var audio_url = audio_url_arabic + ayah_audio_file + ".mp3";
     if(currentAyah < totalAyahs) {
-      new Audio("https://quranwbw.github.io/audio-ayah-arabic/" + ayah_audio_file_next + ".mp3");
+      new Audio(audio_url_arabic + ayah_audio_file_next + ".mp3");
     }
 
     function word_highlighter() {
@@ -564,7 +505,6 @@ $.fn.isInViewport = function() {
 //========================================================================
 
 /* on click events */
-var surah_audio_url = "https://gitlab.com/marwanansari/quranwbw-audios/raw/master/";
 var audio = $('#player')[0];
 
 $(".container").on('click', ".a", function(event, e) {
@@ -578,7 +518,7 @@ $(".container").on('click', ".a", function(event, e) {
   var ayah_ayah = $(this).parent().attr('id');
   $(".s-a#" + ayah_ayah + " .a").addClass("ayah-hover");
   var ayah_audio_file = ('00' + surah_number).slice(-3) + ('00' + ayah_ayah).slice(-3);
-  var audio_url = surah_audio_url + "ayahs/arabic/" + ayah_audio_file + ".mp3";
+  var audio_url = audio_url_arabic + ayah_audio_file + ".mp3";
   $('html, body').animate({ scrollTop: $(".s-a#" + ayah_ayah + " .a").offset().top - 50 }, 1000);
 
   $('.bottom-nav__item.bottom-nav-surahplayer').css("display", "none");
@@ -655,7 +595,7 @@ $(".container").on('click', "sw", function(event, e) {
   var word_word = $(this).index();
   $(".s-a#" + word_ayah + " .a").children().eq(word_word).children("wa").addClass("wa-hover");
   var word_audio_file = surah_number + "/" + ('00' + surah_number).slice(-3) + "_" + ('00' + word_ayah).slice(-3) + "_" + ('00' + word_word).slice(-3);
-  var audio_url = surah_audio_url + "words/" + word_audio_file + ".mp3";
+  var audio_url = audio_url_words + word_audio_file + ".mp3";
 
   $('.bottom-nav__item.bottom-nav-surahplayer').off("click.audio").on("click.audio", function() {
     audio.pause();
@@ -687,7 +627,7 @@ $(".container").on('click', ".f-t", function(event, e) {
   $(".s-a#" + ayah_ayah + " .f-t").addClass("f-t-hover");
   var ayah_audio_file = ('00' + surah_number).slice(-3) + ('00' + ayah_ayah).slice(-3);
   var surah_audio = ('00' + surah_number).slice(-3);
-  var audio_url = surah_audio_url + "ayahs/english/" + ayah_audio_file + ".mp3";
+  var audio_url = audio_url_english + ayah_audio_file + ".mp3";
     
   $('.bottom-nav__item.bottom-nav-surahplayer').off("click.audio").on("click.audio", function() {
     audio.pause();
@@ -705,10 +645,6 @@ $(".container").on('click', ".f-t", function(event, e) {
     $(".f-t").removeClass("f-t-hover");
   };
 });
-
-// need this for mobile browsers
-var surah_audio = new Audio(surah_audio_url + "surahs/" + surah_audio + ".mp3");
-surah_audio.preload = 'none';
 
 $('.bottom-nav-surahplayer').on("click",function(){
   let currentAyah = parseInt($(".full-surah").children(".s-a").first().attr("id"));
@@ -1015,6 +951,10 @@ $(window).on('load', function (e) {
     }
 
   }
+
+  $(".bismillah").css("display", "block");
+  $(".bismillah-english").css("display", "block");
+  $(".loader").css("display", "none");
 
 });
 

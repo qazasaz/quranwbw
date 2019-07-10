@@ -24,9 +24,6 @@ The audio files used by Quranwbw.com are hosted [here on GitLab](https://gitlab.
 ### Mobile App
 I currently don't have any plans on making a mobile app because one, I don't have the knowledge for making mobile applications and second, I don't need to anymore since I've added offline cababilites to Quranwbw.com. However if you still need a mobile application for the word-by-word feature, [brother Imran from reddit](https://www.reddit.com/user/imran_sca) has made an iOS app which includes this feature (and many other). [Check out his post on reddit](https://www.reddit.com/r/islam/comments/ag58k9/assalamu_alaikum_i_have_developed_a_free_no_ads/) or [download his app from the App Store](https://itunes.apple.com/in/app/learn-islam-pro/id1236412299?mt=8).
 
-### Contribute
-If you feel like contributing, please help me fix any issues on Quranwbw.com regarding the words, translations, transliterations, or the design. You can raise an issue here or contact me on my email.
-
 ### Credits
 Quranwbw.com wouldn't be possible without these amazing websites/people:
 - [quran.com](https://quran.com) - for their amazing API and word-by-word audio files.
@@ -36,4 +33,4 @@ Quranwbw.com wouldn't be possible without these amazing websites/people:
 - [Ivan](https://codepen.io/k-ivan) - for his beautiful and wonderful audio player.
 
 ### Contact
-If you find any error on Quranwbw.com, have any suggestions, or would like to contribute, please raise an issue here or email me at quranwbw@gmail.com.
+If you would like to contact me for your contribution, or have any suggestions, or if you found a bug, please contact me on my email at quranwbw@gmail.com.

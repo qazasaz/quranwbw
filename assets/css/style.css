@@ -395,18 +395,18 @@ a.surah-selector-link:hover {
   padding-left: 0px;
 }
 
-w-t, w-a, w-l, wt, wa, wl { 
+w-t, w-a, w-l, .wt, .wa, .wl { 
   display: block; 
 }
 
-.word, .w, s-w, sw {
+.word, .w, s-w, .sw {
   text-align: center;
   float: right;
   margin: 0 8px;
   cursor: pointer;
 }
 
-.AR, w-a, wa {
+.AR, w-a, .wa {
   font-family: 'IndoPak', arial;
   text-align: center;
   font-size: 50px;
@@ -414,7 +414,7 @@ w-t, w-a, w-l, wt, wa, wl {
   border-bottom: 1px solid transparent;
 }
 
-.AR:hover, .AR-hover, w-a:hover, .w-a-hover, .wa-hover, wa:hover {
+.AR:hover, .AR-hover, w-a:hover, .w-a-hover, .wa-hover, .wa:hover {
   color: var(--gold);
 }
 
@@ -422,19 +422,19 @@ w-t, w-a, w-l, wt, wa, wl {
   border-bottom: 1px solid var(--gold);
 }
 
-.TRL, .TR, w-l, w-t, wl, wt {
+.TRL, .TR, w-l, w-t, .wl, .wt {
   font-size: 10px;
   font-family: arial;
   color: #999999;
   direction: ltr;
 }
 
-.TRL, w-l, wl {
+.TRL, w-l, .wl {
   padding-top: 5px;
   padding-bottom: 10px;
 }
 
-.TR, w-t, wt {
+.TR, w-t, .wt {
   padding-top: 10px;
   padding-bottom: 30px;
 }
@@ -739,6 +739,14 @@ a.modal-about-link:hover {
   text-decoration: underline;
 }
 
+a.surah-name-duas, a.surah-name-duas:hover {
+  font-size: 20px;
+  color: #91740c;
+  font-weight: 600;
+  border-bottom: 1px solid;
+}
+
+
 /*************
  * Responsive
  *************/
@@ -855,11 +863,11 @@ and (orientation: portrait) {
     font-size: 15px;
   }
 
-  .AR, w-a, wa {
+  .AR, w-a, .wa {
     font-size: 30px;
   }
 
-  .TRL, .TR, w-l, w-t, wl, wt {
+  .TRL, .TR, w-l, w-t, .wl, .wt {
     font-size: 8px;
   }
 
@@ -1008,7 +1016,7 @@ and (orientation: landscape) {
     max-width: 650px;
   }
 
-  .AR, w-a, wa {
+  .AR, w-a, .wa {
     font-size: 40px;
   }
 

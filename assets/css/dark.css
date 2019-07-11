@@ -24,11 +24,11 @@ body, .homepage {
 }
 
 
-.AR, w-a, .ayah-number, .a-n, .btn-nav, .surah-nav-links, wa, .homepage-title {
+.AR, w-a, .ayah-number, .a-n, .btn-nav, .surah-nav-links, .wa, .homepage-title {
 	color: #fff;
 }
 
-.AR:hover, w-a:hover, .AR-hover, .w-a-hover, wa:hover, .wa-hover {
+.AR:hover, w-a:hover, .AR-hover, .w-a-hover, .wa:hover, .wa-hover {
 	color: #fff;
 }
 
@@ -119,4 +119,8 @@ a.surah-nav-links, a.about-link {
 a.last-read-link {
   color: #fff;
   border-bottom: 1px solid #fff;
+}
+
+a.surah-name-duas, a.surah-name-duas:hover {
+  color: #fff;
 }

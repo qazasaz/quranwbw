@@ -2,12 +2,16 @@
 	margin: 0 6px;
 }
 
-.AR, w-a, wa {
+.AR, w-a, .wa {
 	margin: 10px 0px 0px -5px;
 }
 
-.TR, .TRL, w-t, w-l, wt, wl {
+.TR, .TRL, w-t, w-l, .wt, .wl {
 	display: none;
+}
+
+.sw {
+	margin: 0px 4px;
 }
 
 .ayah, .a {

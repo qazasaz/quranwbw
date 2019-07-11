@@ -4,54 +4,56 @@ var audio_url_main = "https://quranwbw.github.io/",
 	audio_url_english = audio_url_main + "audio-ayah-english/",
 	audio_url_words = audio_url_main + "audio-words-new/";
 
+var surah_names = ["", "Al-Faatiha", "Al-Baqara", "Aal-i-Imraan", "An-Nisaa", "Al-Maaida", "Al-An'aam", "Al-A'raaf", "Al-Anfaal", "At-Tawba", "Yunus", "Hud", "Yusuf", "Ar-Ra'd", "Ibrahim", "Al-Hijr", "An-Nahl", "Al-Israa", "Al-Kahf", "Maryam", "Taa-Haa", "Al-Anbiyaa", "Al-Hajj", "Al-Muminoon", "An-Noor", "Al-Furqaan", "Ash-Shu'araa", "An-Naml", "Al-Qasas", "Al-Ankaboot", "Ar-Room", "Luqman", "As-Sajda", "Al-Ahzaab", "Saba", "Faatir", "Yaseen", "As-Saaffaat", "Saad", "Az-Zumar", "Al-Ghaafir", "Fussilat", "Ash-Shura", "Az-Zukhruf", "Ad-Dukhaan", "Al-Jaathiya", "Al-Ahqaf", "Muhammad", "Al-Fath", "Al-Hujuraat", "Qaaf", "Adh-Dhaariyat", "At-Tur", "An-Najm", "Al-Qamar", "Ar-Rahmaan", "Al-Waaqia", "Al-Hadid", "Al-Mujaadila", "Al-Hashr", "Al-Mumtahana", "As-Saff", "Al-Jumu'a", "Al-Munaafiqoon", "At-Taghaabun", "At-Talaaq", "At-Tahrim", "Al-Mulk", "Al-Qalam", "Al-Haaqqa", "Al-Ma'aarij", "Nooh", "Al-Jinn", "Al-Muzzammil", "Al-Muddaththir", "Al-Qiyaama", "Al-Insaan", "Al-Mursalaat", "An-Naba", "An-Naazi'aat", "Abasa", "At-Takwir", "Al-Infitaar", "Al-Mutaffifin", "Al-Inshiqaaq", "Al-Burooj", "At-Taariq", "Al-A'laa", "Al-Ghaashiya", "Al-Fajr", "Al-Balad", "Ash-Shams", "Al-Lail", "Ad-Dhuhaa", "Ash-Sharh", "At-Tin", "Al-Alaq", "Al-Qadr", "Al-Bayyina", "Az-Zalzala", "Al-Aadiyaat", "Al-Qaari'a", "At-Takaathur", "Al-Asr", "Al-Humaza", "Al-Fil", "Quraish", "Al-Maa'un", "Al-Kawthar", "Al-Kaafiroon", "An-Nasr", "Al-Masad", "Al-Ikhlaas", "Al-Falaq", "An-Naas"];
+
 function font(type, modification) {
   var updated_font_size;
   if(type == "wa") {
-    var fontSize = parseInt($("wa").css("font-size"), 10);
+    var fontSize = parseInt($(".wa").css("font-size"), 10);
     if(modification == "increase") {
       if(fontSize >= 112) updated_font_size = "112px";
       else updated_font_size = fontSize + 2 + "px";
-      $("wa").css("font-size", updated_font_size);
+      $(".wa").css("font-size", updated_font_size);
       $(".ar-c-f").text("(" + updated_font_size + ")");
     }
     else if(modification == "decrease") {
       if(fontSize <= 16) updated_font_size = "16px";
       else updated_font_size = fontSize - 2 + "px";
-      $("wa").css("font-size", updated_font_size);
+      $(".wa").css("font-size", updated_font_size);
       $(".ar-c-f").text("(" + updated_font_size + ")");
     }
     localStorage.setItem('arabic_font_value', updated_font_size);
   }
 
   else if(type == "wt") {
-    var fontSize = parseInt($("wt").css("font-size"), 10);
+    var fontSize = parseInt($(".wt").css("font-size"), 10);
     if(modification == "increase") {
       if(fontSize >= 70) updated_font_size = "70px";
       else updated_font_size = fontSize + 2 + "px";
-      $("wt").css("font-size", updated_font_size);
+      $(".wt").css("font-size", updated_font_size);
       $(".tr-c-f").text("(" + updated_font_size + ")");
     }
     else if(modification == "decrease") {
       if(fontSize <= 8) updated_font_size = "8px";
       else updated_font_size = fontSize - 2 + "px";
-      $("wt").css("font-size", updated_font_size);
+      $(".wt").css("font-size", updated_font_size);
       $(".tr-c-f").text("(" + updated_font_size + ")");
     }
     localStorage.setItem('translation_font_value', updated_font_size);
   }
 
   else if(type == "wl") {
-    var fontSize = parseInt($("wl").css("font-size"), 10);
+    var fontSize = parseInt($(".wl").css("font-size"), 10);
     if(modification == "increase") {
       if(fontSize >= 70) updated_font_size = "70px";
       else updated_font_size = fontSize + 2 + "px";
-      $("wl").css("font-size", updated_font_size);
+      $(".wl").css("font-size", updated_font_size);
       $(".tl-c-f").text("(" + updated_font_size + ")");
     }
     else if(modification == "decrease") {
       if(fontSize <= 8) updated_font_size = "8px";
       else updated_font_size = fontSize - 2 + "px";
-      $("wl").css("font-size", updated_font_size);
+      $(".wl").css("font-size", updated_font_size);
       $(".tl-c-f").text("(" + updated_font_size + ")");
     }
     localStorage.setItem('transliteration_font_value', updated_font_size);
@@ -82,7 +84,7 @@ function toggle_text(type) {
 
       toggle_translation_change.innerHTML = "Hidden";
 
-      $("wt").css("display", "none");
+      $(".wt").css("display", "none");
 
       localStorage.setItem('toggle_translation_value', 'none');
       localStorage.setItem('toggle_translation_change', 'Hidden');
@@ -93,7 +95,7 @@ function toggle_text(type) {
 
       toggle_translation_change.innerHTML = "Visible"; // Hide
 
-      $("wt").css("display", "block");
+      $(".wt").css("display", "block");
 
       localStorage.setItem('toggle_translation_value', 'block');
       localStorage.setItem('toggle_translation_change', 'Visible');
@@ -110,7 +112,7 @@ function toggle_text(type) {
 
       toggle_transliteration_change.innerHTML = "Hidden";
 
-      $("wl").css("display", "none");
+      $(".wl").css("display", "none");
 
       localStorage.setItem('toggle_transliteration_value', 'none');
       localStorage.setItem('toggle_transliteration_change', 'Hidden');
@@ -121,7 +123,7 @@ function toggle_text(type) {
 
       toggle_transliteration_change.innerHTML = "Visible";
 
-      $("wl").css("display", "block");
+      $(".wl").css("display", "block");
 
       localStorage.setItem('toggle_transliteration_value', 'block');
       localStorage.setItem('toggle_transliteration_change', "Visible");
@@ -138,7 +140,7 @@ function toggle_text(type) {
 
       toggle_font_change.innerHTML = "Uthmani";
 
-      $("wa").css("font-family", "Uthmani");
+      $(".wa").css("font-family", "Uthmani");
 
       localStorage.setItem('toggle_font_value', "Uthmani");
       localStorage.setItem('toggle_font_change', "Uthmani");
@@ -149,7 +151,7 @@ function toggle_text(type) {
 
       toggle_font_change.innerHTML = "IndoPak";
 
-      $("wa").css("font-family", "IndoPak");
+      $(".wa").css("font-family", "IndoPak");
 
       localStorage.setItem('toggle_font_value', "IndoPak");
       localStorage.setItem('toggle_font_change', "IndoPak");
@@ -237,7 +239,7 @@ function loadAyahs(surah_no, ayah_from, ayah_till) {
           ayah_translation = data[ayah]["a"]["g"],
           //ayah_timestamp = data[ayah]["a"]["h"];
           //single_ayah_before = "<div class='col-11 s-a' id=" + ayah + " t=" + ayah_timestamp + "><div class=a><div class='w a-n-a'><h3 class=a-n>" + ayah + "</h3></div>";
-          single_ayah_before = "<div class='col-11 s-a' id=" + ayah + "><div class=a><div class='w a-n-a'><h3 class=a-n>" + ayah + "</h3></div>",
+          single_ayah_before = "<div class='col-11 s-a " + surah_no + "' id=" + ayah + "><div class=a><div class='w a-n-a'><h3 class=a-n>" + ayah + "</h3></div>",
           single_ayah_words = "";
 
       for(word = 0; word <= total_words - 1; word++) {
@@ -247,7 +249,7 @@ function loadAyahs(surah_no, ayah_from, ayah_till) {
             word_transliteration = data[ayah]["w"][word]["d"],
             word_translation = data[ayah]["w"][word]["e"], 
 
-        single_ayah_words += "<sw t=" + word_timestamp + "><wl>" + word_transliteration + "</wl><wa>" + word_arabic + "</wa><wt>" + word_translation + "</wt></sw>";
+        single_ayah_words += "<span class=sw data-ts=" + word_timestamp + "><span class=wl>" + word_transliteration + "</span><span class=wa>" + word_arabic + "</span><span class=wt>" + word_translation + "</span></span>";
 
       }
 
@@ -260,13 +262,55 @@ function loadAyahs(surah_no, ayah_from, ayah_till) {
 
       $(".full-surah").append(complete_ayah);
 
-      //console.log(complete_ayah);
+      // console.log(complete_ayah);
     
     }
 
   });
 
 }
+
+
+/* Function to load duas from JSON file */
+function loadDuas(surah_no, ayah_from, ayah_till) {
+
+  $.getJSON("data/" + surah_no + ".json", function(data){
+
+    var ayah, word, total_ayahs = Object.keys(data).length, ayahs_to_load;
+
+    for(ayah = ayah_from; ayah <= ayah_till; ayah++) {
+
+      var total_words = data[ayah]["w"].length,
+          ayah_translation = data[ayah]["a"]["g"],
+          single_ayah_before = "<div class='col-11 s-a " + surah_no + "' id=" + ayah + " style='flex: 0 0 97.5%; max-width: 97.5%;'><div style='text-align: center; padding-bottom: 20px;'><a class='surah-name-duas' target='_blank' href=/" + surah_no + "/" + ayah + ">Surah " + surah_names[surah_no] + ", Ayah " + ayah + "</a></div><div class=a><span></span>",
+          single_ayah_words = "";
+
+      for(word = 0; word <= total_words - 1; word++) {
+
+        var word_timestamp = data[ayah]["w"][word]["b"];
+            word_arabic = data[ayah]["w"][word]["c"],
+            word_transliteration = data[ayah]["w"][word]["d"],
+            word_translation = data[ayah]["w"][word]["e"], 
+
+        single_ayah_words += "<span class=sw data-ts=" + word_timestamp + "><span class=wl>" + word_transliteration + "</span><span class=wa>" + word_arabic + "</span><span class=wt>" + word_translation + "</span></span>";
+
+      }
+
+      if(ayah == total_ayahs)
+        var single_ayah_after = "</div><div class='col-12 f-t'>" + ayah_translation + "</div><br></div>";
+      else
+        var single_ayah_after = "</div><div class='col-12 f-t'>" + ayah_translation + "</div><hr></div>";
+
+      var complete_ayah = single_ayah_before + single_ayah_words + single_ayah_after;
+
+      console.log(complete_ayah);
+    
+    }
+
+  });
+
+}
+
 
 /* Surah audio player */
 var bottom_nav_surahtime = document.getElementById("bottom-nav-surahayah");
@@ -297,14 +341,14 @@ function playSurah(totalAyahs, currentAyah) {
     }
 
     function word_highlighter() {
-      var number_of_words = $(".s-a#" + currentAyah + " .a sw").length;
+      var number_of_words = $(".s-a#" + currentAyah + " .a .sw").length;
       for (var word_no = 0 ; word_no <= number_of_words; word_no++) {
         var prev_word_no = word_no - 1, prev_ayah_no = currentAyah - 1;
-        var time = $(".s-a#" + currentAyah + " .a").children().eq(word_no).attr("t");
+        var time = $(".s-a#" + currentAyah + " .a").children().eq(word_no).attr("data-ts");
         if(time < audio.currentTime) {
-          if (word_no > 0) $(".s-a#" + currentAyah + " .a").children().eq(prev_word_no).children("wa").removeClass("wa-hover");
-          $(".s-a#" + currentAyah + " .a").children().eq(word_no).children("wa").addClass("wa-hover");
-          $(".s-a#" + prev_ayah_no + " .a").children().eq(word_no).children("wa").removeClass("wa-hover");
+          if (word_no > 0) $(".s-a#" + currentAyah + " .a").children().eq(prev_word_no).children(".wa").removeClass("wa-hover");
+          $(".s-a#" + currentAyah + " .a").children().eq(word_no).children(".wa").addClass("wa-hover");
+          $(".s-a#" + prev_ayah_no + " .a").children().eq(word_no).children(".wa").removeClass("wa-hover");
         }
       }
     }
@@ -331,7 +375,8 @@ function playSurah(totalAyahs, currentAyah) {
             audio.currentTime = 0;
             playSurah(totalAyahs, currentAyah + 1);
             paragraph.removeClass("ayah-hover");
-            $("wa").removeClass("wa-hover");
+            $(".wa").removeClass("wa-hover");
+            audio.removeEventListener('timeupdate', word_highlighter);
           }
           count++;
         }
@@ -340,7 +385,7 @@ function playSurah(totalAyahs, currentAyah) {
 
     audio.addEventListener('timeupdate', detectEnd, false);
 
-    $('.bismillah, .a, sw, .f-t').off("click.audio").on("click.audio", function() {
+    $('.bismillah, .a, .sw, .f-t').off("click.audio").on("click.audio", function() {
       $('.play-pause-icon').removeClass('pause-icon');
       $('.play-pause-icon').addClass('play-icon');
       audio.pause();
@@ -367,7 +412,7 @@ function playSurah(totalAyahs, currentAyah) {
       audio.onended = () => {
           audio.currentTime = 0;
           paragraph.removeClass("ayah-hover");
-          $("wa").removeClass("wa-hover");
+          $(".wa").removeClass("wa-hover");
           $('.play-pause-icon').removeClass('pause-icon');
           $('.play-pause-icon').addClass('play-icon');
           $('#bottom-nav-surahayah').css("display", "none");
@@ -383,7 +428,7 @@ function playSurah(totalAyahs, currentAyah) {
           count = 0;
           audio.currentTime = 0;
           paragraph.removeClass("ayah-hover");
-          $("wa").removeClass("wa-hover");
+          $(".wa").removeClass("wa-hover");
       }
     }
           
@@ -416,10 +461,10 @@ function modifyFonts() {
 
   setTimeout(function(){
 
-    $('wa').css("font-size", arabic_font_value);
-    $("wa").css("font-family", toggle_font_value);
-    $("wt").css("font-size", translation_font_value);
-    $("wl").css("font-size", transliteration_font_value);
+    $(".wa").css("font-size", arabic_font_value);
+    $(".wa").css("font-family", toggle_font_value);
+    $(".wt").css("font-size", translation_font_value);
+    $(".wl").css("font-size", transliteration_font_value);
 
     if(arabic_font_value != null || translation_font_value != null || transliteration_font_value != null) {
       $(".ar-c-f").text("(" + arabic_font_value + ")");
@@ -508,16 +553,18 @@ $.fn.isInViewport = function() {
 var audio = $('#player')[0];
 
 $(".container").on('click', ".a", function(event, e) {
+
   var e = event || window.event;
   e.cancelBubble = true;
   if (e.stopPropagation) e.stopPropagation();
       
   $(".a").removeClass("ayah-hover");
-  $("wa").removeClass("wa-hover");
+  $(".wa").removeClass("wa-hover");
   $(".f-t").removeClass("f-t-hover");
+  var ayah_surah = $(this).parent().attr('class').split(' ')[2]; // get third class
   var ayah_ayah = $(this).parent().attr('id');
   $(".s-a#" + ayah_ayah + " .a").addClass("ayah-hover");
-  var ayah_audio_file = ('00' + surah_number).slice(-3) + ('00' + ayah_ayah).slice(-3);
+  var ayah_audio_file = ('00' + ayah_surah).slice(-3) + ('00' + ayah_ayah).slice(-3);
   var audio_url = audio_url_arabic + ayah_audio_file + ".mp3";
   $('html, body').animate({ scrollTop: $(".s-a#" + ayah_ayah + " .a").offset().top - 50 }, 1000);
 
@@ -560,41 +607,44 @@ $(".container").on('click', ".a", function(event, e) {
 
   audio.onended = function() { 
     $(".a").removeClass("ayah-hover"); 
-    $("wa").removeClass("wa-hover");
+    $(".wa").removeClass("wa-hover");
     $(".f-t").removeClass("f-t-hover");
     // auto-play the next ayah
-    // add a box to ask user if they would like to continue
+    audio.removeEventListener('timeupdate', word_highlighter);
     var next_ayah = parseInt(ayah_ayah) + 1;
     if($('.s-a#' + next_ayah).length) playSurah(surah_ayahs, next_ayah);
   };
 
   function word_highlighter() {
-    var number_of_words = $(".s-a#" + ayah_ayah + " .a sw").length;
+    var number_of_words = $(".s-a#" + ayah_ayah + " .a .sw").length;
     for (var word_no = 0 ; word_no <= number_of_words; word_no++) {
       var prev_word_no = word_no - 1, prev_ayah_no = ayah_ayah - 1;
-      var time = $(".s-a#" + ayah_ayah + " .a").children().eq(word_no).attr("t");
+      var time = $(".s-a#" + ayah_ayah + " .a").children().eq(word_no).attr("data-ts");
       if(time < audio.currentTime) {
-        if (word_no > 0) $(".s-a#" + ayah_ayah + " .a").children().eq(prev_word_no).children("wa").removeClass("wa-hover");
-        $(".s-a#" + ayah_ayah + " .a").children().eq(word_no).children("wa").addClass("wa-hover");
-        $(".s-a#" + prev_ayah_no + " .a").children().eq(word_no).children("wa").removeClass("wa-hover");
+        if (word_no > 0) $(".s-a#" + ayah_ayah + " .a").children().eq(prev_word_no).children(".wa").removeClass("wa-hover");
+        $(".s-a#" + ayah_ayah + " .a").children().eq(word_no).children(".wa").addClass("wa-hover");
+        $(".s-a#" + prev_ayah_no + " .a").children().eq(word_no).children(".wa").removeClass("wa-hover");
       }
     }
   }
+
 });
 
 
-$(".container").on('click', "sw", function(event, e) {
+$(".container").on('click', ".sw", function(event, e) {
+  
   var e = event || window.event;
   e.cancelBubble = true;
   if (e.stopPropagation) e.stopPropagation();
 
   $(".a").removeClass("ayah-hover");
-  $("wa").removeClass("wa-hover");
+  $(".wa").removeClass("wa-hover");
   $(".f-t").removeClass("f-t-hover");
+  var word_surah = $(this).parent().parent().attr('class').split(' ')[2]; // get third class
   var word_ayah = $(this).parent().parent().attr('id');
   var word_word = $(this).index();
-  $(".s-a#" + word_ayah + " .a").children().eq(word_word).children("wa").addClass("wa-hover");
-  var word_audio_file = surah_number + "/" + ('00' + surah_number).slice(-3) + "_" + ('00' + word_ayah).slice(-3) + "_" + ('00' + word_word).slice(-3);
+  $(".s-a#" + word_ayah + " .a").children().eq(word_word).children(".wa").addClass("wa-hover");
+  var word_audio_file = word_surah + "/" + ('00' + word_surah).slice(-3) + "_" + ('00' + word_ayah).slice(-3) + "_" + ('00' + word_word).slice(-3);
   var audio_url = audio_url_words + word_audio_file + ".mp3";
 
   $('.bottom-nav__item.bottom-nav-surahplayer').off("click.audio").on("click.audio", function() {
@@ -602,31 +652,37 @@ $(".container").on('click', "sw", function(event, e) {
   });
 
   audio.pause();
-  audio.currentTime = 0;
+  // audio.removeEventListener('timeupdate', word_highlighter);
+  // audio.currentTime = 0;
   audio.src = audio_url;
   audio.load();
   audio.play();
 
-  audio.onended = function() { 
+  audio.onended = function() {
+    audio.pause();
+    audio.currentTime = 0;
     $(".a").removeClass("ayah-hover"); 
-    $("wa").removeClass("wa-hover");
+    $(".wa").removeClass("wa-hover");
     $(".f-t").removeClass("f-t-hover");
   };
+
 });
 
 
 $(".container").on('click', ".f-t", function(event, e) {
+  
   var e = event || window.event;
   e.cancelBubble = true;
   if (e.stopPropagation) e.stopPropagation();
 
   $(".a").removeClass("ayah-hover");
-  $("wa").removeClass("wa-hover");
+  $(".wa").removeClass("wa-hover");
   $(".f-t").removeClass("f-t-hover");
+  var ayah_surah = $(this).parent().attr('class').split(' ')[2]; // get third class
   var ayah_ayah = $(this).parent().attr('id');
   $(".s-a#" + ayah_ayah + " .f-t").addClass("f-t-hover");
-  var ayah_audio_file = ('00' + surah_number).slice(-3) + ('00' + ayah_ayah).slice(-3);
-  var surah_audio = ('00' + surah_number).slice(-3);
+  var ayah_audio_file = ('00' + ayah_surah).slice(-3) + ('00' + ayah_ayah).slice(-3);
+  var surah_audio = ('00' + ayah_surah).slice(-3);
   var audio_url = audio_url_english + ayah_audio_file + ".mp3";
     
   $('.bottom-nav__item.bottom-nav-surahplayer').off("click.audio").on("click.audio", function() {
@@ -641,9 +697,10 @@ $(".container").on('click', ".f-t", function(event, e) {
 
   audio.onended = function() { 
     $(".a").removeClass("ayah-hover"); 
-    $("wa").removeClass("wa-hover");
+    $(".wa").removeClass("wa-hover");
     $(".f-t").removeClass("f-t-hover");
   };
+
 });
 
 $('.bottom-nav-surahplayer').on("click",function(){
@@ -655,12 +712,6 @@ $('.bottom-nav-surahplayer').on("click",function(){
   $('.play-pause-icon').addClass('pause-icon');
   $("#bottom-nav-surahayah").css("display", "inline-block");
   $(this).off('click');
-});
-
-$('.continue-reading-btn').on("click",function(){
-  $(".surah-nav-margin").css("display", "none");
-  var last_ayah = parseInt($('.full-surah .s-a:last').attr('id')) + 1;
-  loadAyahs(surah_number, last_ayah, surah_ayahs);
 });
 
 $('#dummyElement').on("click",function(){

@@ -226,6 +226,24 @@ function toggle_display_mode() {
   }
 }
 
+function toggle_auto_scroll() {
+   
+  var toggle_auto_scroll_change = document.getElementById("auto_scroll");
+
+  if (toggle_auto_scroll_change.innerHTML == "Yes") {
+      toggle_auto_scroll_change.innerHTML = "No";
+      localStorage.setItem('auto_scroll', "No");
+  }
+
+  else {
+      toggle_auto_scroll_change.innerHTML = "Yes";
+      localStorage.setItem('auto_scroll', "Yes");
+  }
+
+}
+
+
+
 /* Function to load ayahs from JSON file */
 function loadAyahs(surah_no, ayah_from, ayah_till) {
 
@@ -557,7 +575,9 @@ $(".container").on('click', ".a", function(event, e) {
   var e = event || window.event;
   e.cancelBubble = true;
   if (e.stopPropagation) e.stopPropagation();
-      
+  
+  var auto_scroll = localStorage.getItem('auto_scroll');
+
   $(".a").removeClass("ayah-hover");
   $(".wa").removeClass("wa-hover");
   $(".f-t").removeClass("f-t-hover");
@@ -568,14 +588,16 @@ $(".container").on('click', ".a", function(event, e) {
   var audio_url = audio_url_arabic + ayah_audio_file + ".mp3";
   $('html, body').animate({ scrollTop: $(".s-a#" + ayah_ayah + " .a").offset().top - 50 }, 1000);
 
-  $('.bottom-nav__item.bottom-nav-surahplayer').css("display", "none");
-  $('.bottom-nav__item.bottom-nav-surahplayer2').css("display", "block");
-  $('.play-pause-icon').removeClass('play-icon');
-  $('.play-pause-icon').addClass('pause-icon');
+  if(auto_scroll == "Yes") {
+    $('.bottom-nav__item.bottom-nav-surahplayer').css("display", "none");
+    $('.bottom-nav__item.bottom-nav-surahplayer2').css("display", "block");
+    $('.play-pause-icon').removeClass('play-icon');
+    $('.play-pause-icon').addClass('pause-icon');
 
-  $('.bottom-nav__item.bottom-nav-surahplayer').off("click.audio").on("click.audio", function() {
-    audio.pause();
-  });
+    $('.bottom-nav__item.bottom-nav-surahplayer').off("click.audio").on("click.audio", function() {
+      audio.pause();
+    });
+  }
 
   audio.pause();
   audio.currentTime = 0;
@@ -587,23 +609,29 @@ $(".container").on('click', ".a", function(event, e) {
 
   audio.addEventListener('timeupdate', word_highlighter);
 
-  $('.bottom-nav__item.bottom-nav-surahplayer2').off("click.audio").on("click.audio", function() {
-    if(audio.paused) {
-      $('.play-pause-icon').removeClass('play-icon');
-      $('.play-pause-icon').addClass('pause-icon');
-      audio.play();
-    }
-    else if(!audio.paused) {
-      $('.play-pause-icon').removeClass('pause-icon');
-      $('.play-pause-icon').addClass('play-icon');
-      audio.pause();
-    }
-  });
+  if(auto_scroll == "Yes") {
+    $('.bottom-nav__item.bottom-nav-surahplayer2').off("click.audio").on("click.audio", function() {
+      if(audio.paused) {
+        $('.play-pause-icon').removeClass('play-icon');
+        $('.play-pause-icon').addClass('pause-icon');
+        // audio.addEventListener('timeupdate', word_highlighter);
+        // $(".s-a#" + ayah_ayah + " .a").addClass("ayah-hover");
+        audio.play();
+      }
+      else if(!audio.paused) {
+        $('.play-pause-icon').removeClass('pause-icon');
+        $('.play-pause-icon').addClass('play-icon');
+        audio.pause();
+      }
+    });
+  }
 
-  // Display the ayah number on bottom
-  $("#bottom-nav-surahayah").css("display", "inline-block");
-  var bottom_nav_surahtime = document.getElementById("bottom-nav-surahayah");
-  bottom_nav_surahtime.innerHTML = "(Ayah " + ayah_ayah + ")";
+  if(auto_scroll == "Yes") {
+    // Display the ayah number on bottom
+    $("#bottom-nav-surahayah").css("display", "inline-block");
+    var bottom_nav_surahtime = document.getElementById("bottom-nav-surahayah");
+    bottom_nav_surahtime.innerHTML = "(Ayah " + ayah_ayah + ")";
+  }
 
   audio.onended = function() { 
     $(".a").removeClass("ayah-hover"); 
@@ -611,8 +639,21 @@ $(".container").on('click', ".a", function(event, e) {
     $(".f-t").removeClass("f-t-hover");
     // auto-play the next ayah
     audio.removeEventListener('timeupdate', word_highlighter);
-    var next_ayah = parseInt(ayah_ayah) + 1;
-    if($('.s-a#' + next_ayah).length) playSurah(surah_ayahs, next_ayah);
+
+    if(auto_scroll == "Yes") {
+      
+      var next_ayah = parseInt(ayah_ayah) + 1;
+      if($('.s-a#' + next_ayah).length) playSurah(surah_ayahs, next_ayah);
+    
+    } else {
+     
+      $('.play-pause-icon').removeClass('pause-icon');
+      $('.play-pause-icon').addClass('play-icon');
+      audio.pause();
+      audio.currentTime = 0;
+    
+    }
+
   };
 
   function word_highlighter() {
@@ -784,6 +825,14 @@ $(window).on('load', function (e) {
   // if it's the surah page
   // ======================
   else {
+
+    // if auto-scroll is not set, then set it to true
+    if (localStorage.getItem('auto_scroll') == null) {
+      localStorage.setItem('auto_scroll', "Yes");
+    }
+
+    var auto_scroll = localStorage.getItem('auto_scroll');
+    $("#auto_scroll").text(auto_scroll);
 
     // loading dark mode the first because don't wanna hurt the eyes
     var toggle_display_mode = localStorage.getItem('toggle_display_mode_change'),

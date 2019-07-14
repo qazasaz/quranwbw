@@ -9,9 +9,3 @@
 
 # ayah end rewrite
 /:surah/:ayah-:end /:surah#:ayah
-
-# about page redirect
-/about https://github.com/quranwbw/quranwbw#readme
-
-# audio links rewrite
-/audios/* https://gitlab.com/marwanansari/quranwbw-audios/raw/master/:splat 200

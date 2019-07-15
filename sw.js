@@ -1,5 +1,5 @@
-const PRECACHE = 'precache-v1.78';
-const RUNTIME = 'runtime-v1.78';
+const PRECACHE = 'precache-v1.80';
+const RUNTIME = 'runtime-v1.80';
 
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
@@ -56,7 +56,7 @@ const PRECACHE_URLS = [
   './assets/fonts/Cabin-Bold.eot', './assets/fonts/Cabin-Bold.ttf', './assets/fonts/Cabin-Bold.woff', './assets/fonts/Cabin-Bold.woff2', './assets/fonts/IndoPak.woff', './assets/fonts/IndoPak.woff2', './assets/fonts/Uthmani.woff', './assets/fonts/Uthmani.woff2', 
 
   /* images */
-  './assets/images/bismillah.png', './assets/images/chevron.svg', './assets/images/loading.png', './assets/images/play.png', './assets/images/pause.png',
+  './assets/images/bismillah.png', './assets/images/chevron.svg', './assets/images/loading.png', './assets/images/play.png', './assets/images/pause.png', './assets/images/sajda.png', 
 
   /* other stuff */
   './assets/surahs.html', './assets/about.html'
